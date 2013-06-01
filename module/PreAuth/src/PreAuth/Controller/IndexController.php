@@ -13,6 +13,8 @@ PreAuth\Form\Login;
 
 class IndexController extends AbstractActionController
 {
+	
+	
     public function indexAction()
     {
         return new ViewModel();
@@ -26,7 +28,8 @@ class IndexController extends AbstractActionController
     
     public function loginAction()
     {
-		 	
+    		$this->layout('layout/layout_admin');
+    	 
     		$form = new Login(); 
 		    $request = $this->getRequest(); 
 		
@@ -67,6 +70,7 @@ class IndexController extends AbstractActionController
     
     public function logoutAction()
     {
+    	$this->layout('layout/layout_admin');
     	$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
     	$authService->clearIdentity();
     	return $this->redirect()->toRoute('login');
@@ -74,7 +78,7 @@ class IndexController extends AbstractActionController
     
     public function dashboardAction()
     {
-    	
+    	$this->layout('layout/layout_admin');
     	//$identity = $this->plugin('identity');
     	
 		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');

@@ -1,0 +1,103 @@
+	<!--  start page-heading -->
+	<div id="page-heading">
+		<h1>Manage Sub Categories</h1>
+	</div>
+	<!-- end page-heading -->
+	<?php 
+		
+	
+	?>
+	
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" id="content-table">
+	<tbody><tr>
+		<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowleft.jpg"></th>
+		<th class="topleft"></th>
+		<td id="tbl-border-top">&nbsp;</td>
+		<th class="topright"></th>
+		<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowright.jpg"></th>
+	</tr>
+	
+	<tr>
+		<td id="tbl-border-left"></td>
+		<td>
+		<!--  start content-table-inner ...................................................................... START -->
+		<div id="content-table-inner">
+			<?php 
+			
+				if(count($messages) > 0)
+				{
+					$tempMsg = ""; 
+					foreach($messages as $key => $message)
+					{
+						$tempMsg = $tempMsg .  $message . "<br/>";
+					}	
+						
+					
+				$strMessage = <<<MSG
+				<div id="message-green">
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+				<tbody><tr>
+					<td class="green-left">$tempMsg</td>
+					<td class="green-right"><a class="close-green"><img alt="" src="../images/table/icon_close_green.gif"></a></td>
+				</tr>
+				</tbody></table>
+				</div>
+MSG;
+				
+				
+				echo $strMessage;
+				}
+			?>
+		
+			<!--  start table-content  -->
+			<div id="table-content">
+			<h3><a href="<?php echo $this->url('subacatadd'); ?>">Add Sub Category</a></h3>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
+				<tbody><tr>
+					<th class="table-header-repeat line-left"><a href="">No</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Sub Category Name</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Parent Category</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Subcategory Description</a></th>
+					<th class="table-header-options line-left"><a href="">Options</a></th>
+				</tr>
+			<?php 
+				
+				$i = 1;
+			
+				foreach($categories as $category)
+				{
+			?>
+				
+				<tr>
+					<td><?php echo $i;?></td>
+					<td><?php echo $category['cname']; ?></td>
+					<td><?php echo $category['parent']; ?></td>
+					<td><?php echo $category['description']; ?></td>
+					<td class="options-width">
+					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$category['id'])); ?>"></a>
+					<a class="icon-2 info-tooltip" href=""></a>
+					<a class="icon-5 info-tooltip" href=""></a>
+					</td>
+				</tr>
+			<?php 
+					$i = $i + 1;
+				}
+			?>
+				</tbody></table>			
+			</div>
+			<!--  end table-content  -->
+	
+			<div class="clear"></div>
+		 
+		</div>
+		<!--  end content-table-inner ............................................END  -->
+		</td>
+		<td id="tbl-border-right"></td>
+	</tr>
+	<tr>
+		<th class="sized bottomleft"></th>
+		<td id="tbl-border-bottom">&nbsp;</td>
+		<th class="sized bottomright"></th>
+	</tr>
+	</tbody></table>
+	<div class="clear">&nbsp;</div>

@@ -6,4 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AtAdmin\\Module' => $vendorDir . '/atukai/at-admin/Module.php',
+    'AtBase\\Module' => $vendorDir . '/atukai/at-base/Module.php',
+    'AtBlock\\Module' => $vendorDir . '/atukai/at-block/Module.php',
+    'AtCms\\Module' => $vendorDir . '/atukai/at-cms/Module.php',
+    'AtDataGrid\\Module' => $vendorDir . '/atukai/at-datagrid/Module.php',
+    'ZfcAdmin\\Module' => $vendorDir . '/zf-commons/zfc-admin/Module.php',
+    'ZfcBase\\Module' => $vendorDir . '/zf-commons/zfc-base/Module.php',
 );

@@ -24,7 +24,7 @@ class CategoryFormValidator implements InputFilterAwareInterface
 
 
 			$inputFilter->add($factory->createInput(array(
-					'name' => 'name',
+					'name' => 'cname',
 					'required' => true,
 					'filters' => array(
 							array('name' => 'StripTags'),

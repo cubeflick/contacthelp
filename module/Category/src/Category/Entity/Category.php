@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="categories")
+ * @ORM\Table(name="category")
  */
 class Category {
 	/**
@@ -19,7 +19,7 @@ class Category {
 	/**
 	 * @ORM\Column(type="string")
 	 */
-	protected $name;
+	protected $cname;
 
 	/**
 	 * @ORM\Column(name="parent_id",type="integer");
@@ -40,7 +40,7 @@ class Category {
 	public function populate($data = array())
 	{
 		$this->id = $data['id'];
-		$this->name = $data['name'];
+		$this->cname = $data['cname'];
 		$this->parentId = $data['parent_id'];
 		$this->description = $data['description'];
 	}
@@ -69,7 +69,7 @@ class Category {
 	 */
 	public function getName()
 	{
-		return $this->name;
+		return $this->cname;
 	}
 
 	/**
@@ -95,4 +95,30 @@ class Category {
 		return $this->parentId;
 	}
 	
+	public function getParent()
+	{
+		return $this->parent;
+	}
+	
+	public function getChildren()
+	{
+		return $this->children;
+	}
+	
+	
+	
+//     /**
+//      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
+//      */
+//     private $children;
+
+//     /**
+//      * @ORM\ManyToOne(targetEntity="Category",inversedBy="children")
+//      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+//      */
+//     private $parent;
+
+//     public function __construct() {
+//     	$this->children = new \Doctrine\Common\Collections\ArrayCollection();
+//     }    
 }

@@ -6,9 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ZfcBase' => $vendorDir . '/zf-commons/zfc-base/src',
+    'ZfcAdmin' => $vendorDir . '/zf-commons/zfc-admin/src',
     'Zend\\' => $vendorDir . '/zendframework/zendframework/library',
     'ZendTest\\' => $vendorDir . '/zendframework/zendframework/tests',
     'Symfony\\Component\\Console\\' => $vendorDir . '/symfony/console',
+    'SpiffyNavigation\\' => $vendorDir . '/spiffy/spiffy-navigation/src',
     'Doctrine\\ORM' => $vendorDir . '/doctrine/orm/lib',
     'Doctrine\\DBAL' => $vendorDir . '/doctrine/dbal/lib',
     'Doctrine\\Common' => $vendorDir . '/doctrine/common/lib',
@@ -16,4 +19,9 @@ return array(
     'DoctrineORMModuleTest\\' => $vendorDir . '/doctrine/doctrine-orm-module/tests',
     'DoctrineModule\\' => $vendorDir . '/doctrine/doctrine-module/src',
     'DoctrineModuleTest\\' => $vendorDir . '/doctrine/doctrine-module/tests',
+    'AtDataGrid\\' => $vendorDir . '/atukai/at-datagrid/src',
+    'AtCms\\' => $vendorDir . '/atukai/at-cms/src',
+    'AtBlock\\' => $vendorDir . '/atukai/at-block/src',
+    'AtBase\\' => $vendorDir . '/atukai/at-base/src',
+    'AtAdmin\\' => $vendorDir . '/atukai/at-admin/src',
 );

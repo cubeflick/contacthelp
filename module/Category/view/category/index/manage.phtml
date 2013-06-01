@@ -70,16 +70,15 @@ MSG;
 				
 				$i = 1;
 			
-				foreach($categories as $category)
+				foreach($paginator as $category)
 				{	
 			?>
-				
 				<tr>
 					<td><?php echo $i; ?></td>
-					<td><?php echo $category->getName(); ?></td>
-					<td><?php echo $category->getDescription(); ?></td>
+					<td><?php echo $category['cname']; ?></td>
+					<td><?php echo $category['description']; ?></td>
 					<td class="options-width">
-					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$category->getId())); ?>"></a>
+					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$category['id'])); ?>"></a>
 					<a class="icon-2 info-tooltip" href=""></a>
 					<a class="icon-5 info-tooltip" href=""></a>
 					</td>
@@ -88,6 +87,8 @@ MSG;
 					$i = $i + 1;
 				}
 			?>
+			
+				<tr><td colspan="4"><?php echo $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?></td></tr>
 				</tbody></table>			
 			</div>
 			<!--  end table-content  -->
@@ -104,5 +105,6 @@ MSG;
 		<td id="tbl-border-bottom">&nbsp;</td>
 		<th class="sized bottomright"></th>
 	</tr>
+	
 	</tbody></table>
 	<div class="clear">&nbsp;</div>

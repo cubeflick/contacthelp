@@ -2,6 +2,8 @@
 return array(
     'modules' => array(
     	'ZendDeveloperTools',
+    	'AtCms',
+    	'AtAdmin',		
     	'BjyProfiler',
         'Application',
     	'PreAuth',

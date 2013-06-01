@@ -15,7 +15,7 @@ class CategoryForm extends Form
         $this->setAttribute('method', 'post'); 
         
         $this->add(array( 
-            'name' => 'name', 
+            'name' => 'cname', 
             'type' => 'Zend\Form\Element\Text', 
             'attributes' => array( 
             	'class' => 'inp-form',	

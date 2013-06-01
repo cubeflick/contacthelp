@@ -28,7 +28,10 @@
 		<tbody><tr>
 			<th valign="top">Category name:</th>
 			<td>
-				<?php echo $this->formInput($form->get('name')); ?>
+				<?php 
+					echo $this->formInput($form->get('cname'));
+					echo $this->formElementErrors($form->get('cname'));
+				?>
 			</td>
 			<td></td>
 		</tr>

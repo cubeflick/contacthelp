@@ -1,0 +1,88 @@
+<!--  start page-heading -->
+<div id="page-heading">
+	<h1>Add Sub Category</h1>
+</div>
+<!-- end page-heading -->
+<?php echo $this->form()->openTag($form); ?>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" id="content-table">
+<tbody><tr>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowleft.jpg"></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowright.jpg"></th>
+</tr>
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+	
+			<!--  start table-content  -->
+			<div id="table-content">	
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr valign="top">
+	<td>
+		<!-- start id-form -->
+		<table cellspacing="0" cellpadding="0" border="0" id="id-form">
+		<tbody>
+			<tr>
+		<th valign="top">Parent Category:</th>
+		<td>
+				<?php echo $this->formSelect($form->get('parent_id')); ?>
+		</td>
+		<td></td>
+	</tr>
+		
+		
+		<tr>
+			<th valign="top">SubCategory name:</th>
+			<td>
+				<?php 
+					echo $this->formInput($form->get('cname'));
+					echo $this->formElementErrors($form->get('cname'));
+				
+				?>
+			</td>
+			<td></td>
+		</tr>
+	<tr>
+		<th valign="top">Description:</th>
+		<td>
+				<?php echo $this->formInput($form->get('description')); ?>
+		</td>
+		<td></td>
+	</tr>
+			<tr>
+		<th>&nbsp;</th>
+		<td valign="top">
+		
+			<?php echo $this->formInput($form->get('submit')); ?>
+		</td>
+		<td></td>
+	</tr>
+	</tbody></table>
+	<!-- end id-form  -->
+
+	</td>
+</tr>
+</tbody></table>
+</div> 
+<div class="clear"></div>
+ 
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</tbody></table>
+
+<?php echo $this->form()->closeTag($form); ?>
+
+
