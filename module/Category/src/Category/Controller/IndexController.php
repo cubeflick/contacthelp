@@ -68,9 +68,9 @@ class IndexController extends AbstractActionController
 			$paginator = new ZPaginator(
 					new DoctrinePaginator(new ORMPaginator($query))
 			);
-			echo "<pre>";
-			print_r($this->params());
-			die;
+// 			echo "<pre>";
+// 			print_r($this->params());
+// 			die;
 			$paginator->setCurrentPageNumber($this->params('page',2))
 					  ->setItemCountPerPage(1);
 
