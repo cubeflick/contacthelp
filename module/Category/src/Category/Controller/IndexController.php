@@ -71,8 +71,8 @@ class IndexController extends AbstractActionController
 // 			echo "<pre>";
 // 			print_r($this->params());
 // 			die;
-			$paginator->setCurrentPageNumber($this->params('page',2))
-					  ->setItemCountPerPage(1);
+			$paginator->setCurrentPageNumber($this->params('page',1))
+					  ->setItemCountPerPage(10);
 
 			return new ViewModel(array(
 					'messages' => $messages,
