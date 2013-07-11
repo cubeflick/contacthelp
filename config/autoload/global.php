@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=zend_contacthelp;host=localhost',
+        'dsn'            => 'mysql:dbname=cubeflic_contacthp;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
@@ -14,4 +14,9 @@ return array(
         ),
     		
     ),
+	'factories' => array(
+			'Navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+	)
+		
+		
 );
