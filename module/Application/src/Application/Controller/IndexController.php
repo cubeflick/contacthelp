@@ -2,6 +2,8 @@
 
 namespace Application\Controller;
 
+use Application\Entity\CompanyListing;
+
 use Application\Form\listing;
 
 
@@ -69,7 +71,7 @@ class IndexController extends AbstractActionController
     	$form = new Listing();
     	$request = $this->getRequest();
     	
-    	$listing = new Company_listing();
+    	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     	
     	if($request->isPost())

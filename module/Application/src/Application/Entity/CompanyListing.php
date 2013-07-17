@@ -1,5 +1,6 @@
 <?php
 
+
 namespace Application\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -9,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="company_listing")
  */
 
-class Company_listing {
+class CompanyListing {
 	/**
 	 * @ORM\c_id
 	 * @ORM\Column(type="integer");
@@ -18,65 +19,65 @@ class Company_listing {
 	protected $c_id = null ;
 
 	/**
-	 * @ORM\Column(name="c_name",type="string")
+	 * @ORM\Column(type="string")
 	 */
 	protected $c_name;
 
 	/**
-	 * @ORM\Column(name="sub_category1",type="string");
+	 * @ORM\Column(name="sub_category1",type="varchar");
 	 */
 
 	protected $sub_category1;
 	/**
-	 * @ORM\Column(name="sub_category2",type="string");
+	 * @ORM\Column(name="sub_category2",type="varchar");
 	 */
 
 	protected $sub_category2;
 
 	/**
-	 * @ORM\Column(name="sub_category3",type="string");
+	 * @ORM\Column(name="sub_category3",type="varchar");
 	 */
 
 	protected $sub_category3;
 
 	/**
-	 * @ORM\Column(name="company_url",type="string");
+	 * @ORM\Column(name="company_url",type="varchar");
 	 */
 
 	protected $company_url;
 
 	/**
-	 * @ORM\Column(name="department",type="string");
+	 * @ORM\Column(name="department",type="varchar");
 	 */
 
 	protected $department;
 
 	/**
-	 * @ORM\Column(name="phone_number",type="decimal", precision=12, scale=0);
+	 * @ORM\Column(name="phone_number",type="varchar");
 	 */
 
 	protected $phone_number;
 
 	/**
-	 * @ORM\Column(name="step_to_reach",type="string");
+	 * @ORM\Column(name="step_to_reach",type="varchar");
 	 */
 
 	protected $step_to_reach;
 
 	/**
-	 * @ORM\Column(name="customer_service_link",type="string");
+	 * @ORM\Column(name="customer_service_link",type="varchar");
 	 */
 
 	protected $customer_service_link;
 
 	/**
-	 * @ORM\Column(name="customer_support_email",type="string");
+	 * @ORM\Column(name="customer_support_email",type="varchar");
 	 */
 
 	protected $customer_support_email;
 
 	/**
-	 * @ORM\Column(name="operation_hours",type="decimal", precision=12, scale=0);
+	 * @ORM\Column(name="operation_hours",type="varchar");
 	 */
 
 	protected $operation_hours;
@@ -87,19 +88,19 @@ class Company_listing {
 	protected $description;
 
 	/**
-	 * @ORM\Column(name="additional_note",type="string");
+	 * @ORM\Column(name="additional_note",type="varchar");
 	 */
 
 	protected $additional_note;
 
 	/**
-	 * @ORM\Column(name="user_name",type="string");
+	 * @ORM\Column(name="user_name",type="varchar");
 	 */
 
 	protected $user_name;
 
 	/**
-	 * @ORM\Column(name="user_email",type="string");
+	 * @ORM\Column(name="user_email",type="varchar");
 	 */
 
 	protected $user_email;

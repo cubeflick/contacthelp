@@ -283,3 +283,70 @@ text-align:center;
   -webkit-border-radius: 4px 4px 0  0; /* Safari and Chrome */
   border-radius: 4px 4px 0  0; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
 }
+
+/*CSS for listing form*/
+
+#listing_form
+{
+	padding:10px;
+}
+
+#listing_form > legend
+{
+    background: url("images/nav_bg.png");
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 35px 3px 25px;
+}
+
+#listing_form div#content-table-inner th
+{
+	 text-align: right;
+    width: 150px;
+    padding: 5px;
+}
+
+#listing_form div#content-table-inner td
+{
+	padding :5px;
+}
+
+
+#listing_form div#content-table-inner td input 
+{
+	background-color: #FDFDFD;
+    border: 1px solid #E7EAED;
+    color: #333333;
+    font-size: 14px;
+    height: 22px;
+    padding: 5px 0 0 2px;
+    width: 250px;
+}
+#listing_form div#content-table-inner td textarea 
+{
+	height: 73px;
+    width: 288px;
+     background-color: #FDFDFD;
+    border: 1px solid #E7EAED;
+    font-size: 14px;
+    padding-left: 2px;
+   
+}
+
+#listing_form div#content-table-inner td input.submit-listing
+{
+	height: 30px;
+    width: 100px;
+    padding-bottom: 10px;
+    background: url("images/nav_bg.png");
+}
+
+#listing_form div#content-table-inner td #captcha
+{
+	 width: 250px;
+}
+
+
+
+
