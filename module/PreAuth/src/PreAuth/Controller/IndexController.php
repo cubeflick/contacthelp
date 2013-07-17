@@ -83,7 +83,7 @@ class IndexController extends AbstractActionController
     	
 		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 		$loggedInUser = $authService->getIdentity();
-		
+
 		$this->layout()->loggedInUser = $loggedInUser; 
 		if($loggedInUser)
 		{	

@@ -134,5 +134,45 @@ abstract class Proxy
             }
         }
     }
+    
+    
+    
+    public function saveListings(Company_listing $category)
+    {
+    	$data = array(
+    			'c_id' => $this->c_id,
+    			'c_name' => $this->c_name,
+    			'sub_category1' => $this->sub_category1,
+    			'sub_category2' => $this->sub_category2,
+    			'sub_category3' => $this->sub_category3,
+    			'company_url' => $this->company_url,
+    			'department' => $this->department,
+    			'phone_number' => $this->phone_number,
+    			'step_to_reach' => $this->step_to_reach,
+    			'customer_service_link' => $this->customer_service_link,
+    			'customer_support_email' => $this->customer_support_email,
+    			'operation_hours' => $this->operation_hours,
+    			'description' => $this->description,
+    			'additional_note' => $this->additional_note,
+    			'user_name' => $this->user_name,
+    			'user_email' => $this->user_email,
+    	);
+    
+    	$c_id = (int)$category->c_id;
+    	if ($c_id == 0) {
+    		$this->tableGateway->insert($data);
+    	} else {
+    		if ($this->getCategory($c_id)) {
+    			$this->tableGateway->update($data, array('c_id' => $c_id));
+    		} else {
+    			throw new \Exception('Form id does not exist');
+    		}
+    	}
+    }
+    
+    
+    
+    
+    
 
 }

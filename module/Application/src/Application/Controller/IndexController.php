@@ -2,11 +2,45 @@
 
 namespace Application\Controller;
 
+use Application\Form\listing;
+
+
+
 use Zend\Mvc\Controller\AbstractActionController,
-Zend\View\Model\ViewModel;
+Zend\View\Model\ViewModel,
+Category\Form\CategoryFormValidator,
+Zend\Mvc\Controller\ActionController,
+Doctrine\ORM\EntityManager,
+Application\Entity\Company_listing,
+Zend\Paginator;
+
+
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
+use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
+use Zend\Paginator\Paginator as ZPaginator;
+
+
+
+
 
 class IndexController extends AbstractActionController
 {
+	
+	
+	
+	protected $em;
+	
+	public function getEntityManager()
+	{
+		if (null === $this->em) {
+			$this->em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+		}
+		return $this->em;
+	}
+	
+	
+	
+	
     public function indexAction()
     {
         return new ViewModel();
@@ -17,4 +51,48 @@ class IndexController extends AbstractActionController
     	
     	return new ViewModel();
     }
+    
+    public function categoryAction()
+    
+    {
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo"
+    	));
+    	
+    }
+    
+    public function listingAction()
+    
+    {
+    	$em = $this->getEntityManager();
+    	
+    	$form = new Listing();
+    	$request = $this->getRequest();
+    	
+    	$listing = new Company_listing();
+    	$listing->populate($request->getPost());
+    	
+    	if($request->isPost())
+    	{
+    		$formValidator = new CategoryFormValidator();
+    		$form->setInputFilter($formValidator->getInputFilter());
+    		$form->setData($request->getPost());
+    	
+    		if($form->isValid()){
+    			{
+    				$em->persist($listing);
+    				$em->flush();
+    				$this->flashMessenger()->addMessage('Category added successfully','success');
+   				return $this->redirect()->toRoute('managecategory');
+    			}
+    		}
+    		 
+    	}
+    	
+    	
+    	return array('form' => $form);
+    	
+    }
+    
+    
 }

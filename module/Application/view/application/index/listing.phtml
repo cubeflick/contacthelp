@@ -1,0 +1,185 @@
+<!--  start page-heading -->
+<div id="page-heading">
+	<h1>Add a New Listing</h1>
+	<br>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor quis tellus euismod sodales. Donec tincidunt auctor convallis. Nunc tincidunt nibh nec odio venenatis et condimentum nisl dapibus. Integer ipsum elit, commodo ac congue quis, varius at eros. Praesent tempus vulputate tortor eu feugiat. Maecenas bibendum suscipit molestie. Phasellus erat arcu, fringilla ac suscipit nec, lobortis at mi.</p>
+
+	</div>
+<!-- end page-heading -->
+<fieldset id="listing_form">
+<legend>Submit Listing</legend>
+<?php echo $this->form()->openTag($form); ?>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" id="content-table">
+<tbody><tr>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowleft.jpg"></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowright.jpg"></th>
+</tr>
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+<div id="table-content">	
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr valign="top">
+	<td>
+		<!-- start id-form -->
+		<table cellspacing="0" cellpadding="0" border="0" id="id-form">
+		<tbody><tr>
+			<th valign="top">Listing/Company Name:</th>
+			<td>
+				<?php 
+					echo $this->formInput($form->get('Listing_Name'));
+					echo $this->formElementErrors($form->get('Listing_Name'));
+				?>
+			</td>
+			<td></td>
+		</tr>
+	<tr>
+		<th valign="top">Department:</th>
+		<td>
+				<?php echo $this->formInput($form->get('department')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Phone:</th>
+		<td>
+				<?php echo $this->formInput($form->get('phone')); ?>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th valign="top">Steps to reach a person:</th>
+		<td>
+				<?php echo $this->formTextarea($form->get('steps')); ?>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th valign="top">Website Address:</th>
+		<td>
+				<?php echo $this->formInput($form->get('website')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Customer Service Link:</th>
+		<td>
+				<?php echo $this->formInput($form->get('customer_service_link')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Support Email Address:</th>
+		<td>
+				<?php echo $this->formInput($form->get('support_email')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Category1:</th>
+		<td>
+				<?php echo $this->formInput($form->get('category1')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Category2:</th>
+		<td>
+				<?php echo $this->formInput($form->get('category2')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Category3:</th>
+		<td>
+				<?php echo $this->formInput($form->get('category3')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Hours of operation:</th>
+		<td>
+				<?php echo $this->formInput($form->get('operation_hours')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Description:</th>
+		<td>
+				<?php echo $this->formTextarea($form->get('description')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Additional Note:</th>
+		<td>
+				<?php echo $this->formTextarea($form->get('additional_notes')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Your Name:</th>
+		<td>
+				<?php echo $this->formInput($form->get('user_name')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Your Email:</th>
+		<td>
+				<?php echo $this->formInput($form->get('user_email')); ?>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th valign="top"></th>
+		<td><div id="captcha">
+				<?php echo $this->formCaptcha($form->get('captcha')); ?>
+		</div>
+		</td>
+		<td></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th>&nbsp;</th>
+		<td valign="top">
+		
+			<?php echo $this->formInput($form->get('submit')); ?>
+		</td>
+		<td></td>
+	</tr>
+	</tbody></table>
+	<!-- end id-form  -->
+
+	</td>
+</tr>
+</tbody></table>
+</div> 
+<div class="clear"></div>
+ 
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</tbody></table>
+</fieldset>
+
+<?php echo $this->form()->closeTag($form); ?>

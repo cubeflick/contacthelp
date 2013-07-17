@@ -32,3 +32,4 @@ class User {
 	public $password;
 
 }
+
