@@ -10,6 +10,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 
 class Company_listing {
+	
+	
+	
 	/**
 	 * @ORM\c_id
 	 * @ORM\Column(type="integer");
