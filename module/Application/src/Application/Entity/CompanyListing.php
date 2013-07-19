@@ -22,16 +22,16 @@ use Doctrine\ORM\Mapping as ORM;
 
 class CompanyListing {
 	/**
-	 * @ORM\c_id
+	 * @ORM\listing_id
 	 * @ORM\Column(type="integer");
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	protected $_cId = null ;
+	protected $_listingId = null ;
 
 	/**
-	 * @ORM\Column(name="c_name",type="string")
+	 * @ORM\Column(name="listing_name",type="string")
 	 */
-	protected $_cName;
+	protected $_listingName;
 
 	/**
 	 * @ORM\Column(name="sub_category1",type="varchar");
@@ -131,11 +131,11 @@ class CompanyListing {
 	*/
 	public function populate($data = array())
 	{
-		$this->_cId = $data['_cid'];
-		$this->_cName = $data['cname'];
-		$this->_subCategoryOne = $data['sub_category1'];
-		$this->_subCategoryTwo = $data['sub_category2'];
-		$this->_subCategoryThree = $data['sub_category3'];
+		$this->_listingId = $data['listing_id'];
+		$this->_listingName = $data['listing_name'];
+		$this->_subCategoryOne = $data['sub_category_one'];
+		$this->_subCategoryTwo = $data['sub_category_two'];
+		$this->_subCategoryThree = $data['sub_category_three'];
 		$this->_companyUrl = $data['company_url'];
 		$this->_department = $data['department'];
 		$this->_phoneNumber = $data['phone_number'];

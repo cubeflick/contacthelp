@@ -41,7 +41,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'phone',
+        		'name' => 'phone_number',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'login-inp',
@@ -54,7 +54,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'steps',
+        		'name' => 'step_to_reach',
         		'type' => 'Zend\Form\Element\Textarea',
         		'attributes' => array(
         				'class' => 'form-textarea',
@@ -66,7 +66,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'website',
+        		'name' => 'company_url',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'inp-form',
@@ -90,7 +90,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'support_email',
+        		'name' => 'customer_support_email',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'inp-form',
@@ -102,7 +102,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'category1',
+        		'name' => 'sub_category_one',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'inp-form',
@@ -114,7 +114,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'category2',
+        		'name' => 'sub_category_two',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'inp-form',
@@ -126,7 +126,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'category3',
+        		'name' => 'sub_category_three',
         		'type' => 'Zend\Form\Element\Text',
         		'attributes' => array(
         				'class' => 'inp-form',
@@ -162,7 +162,7 @@ class Listing extends Form
         ));
         
         $this->add(array(
-        		'name' => 'additional_notes',
+        		'name' => 'additional_note',
         		'type' => 'Zend\Form\Element\Textarea',
         		'attributes' => array(
         				'class' => 'form-textarea',
