@@ -48,72 +48,72 @@ class CompanyListing {
 	 * @ORM\Column(name="sub_category3",type="varchar");
 	 */
 
-	protected $sub_category3;
+	protected $_subcategoryThree;
 
 	/**
 	 * @ORM\Column(name="company_url",type="varchar");
 	 */
 
-	protected $company_url;
+	protected $_companyUrl;
 
 	/**
 	 * @ORM\Column(name="department",type="varchar");
 	 */
 
-	protected $department;
+	protected $_department;
 
 	/**
 	 * @ORM\Column(name="phone_number",type="varchar");
 	 */
 
-	protected $phone_number;
+	protected $_phoneNumber;
 
 	/**
 	 * @ORM\Column(name="step_to_reach",type="varchar");
 	 */
 
-	protected $step_to_reach;
+	protected $_stepToReach;
 
 	/**
 	 * @ORM\Column(name="customer_service_link",type="varchar");
 	 */
 
-	protected $customer_service_link;
+	protected $_customerServiceLink;
 
 	/**
 	 * @ORM\Column(name="customer_support_email",type="varchar");
 	 */
 
-	protected $customer_support_email;
+	protected $_customerSupportEmail;
 
 	/**
 	 * @ORM\Column(name="operation_hours",type="varchar");
 	 */
 
-	protected $operation_hours;
+	protected $_operationHours;
 
 	/**
 	 * @ORM\Column(type="string")
 	 */
-	protected $description;
+	protected $_description;
 
 	/**
 	 * @ORM\Column(name="additional_note",type="varchar");
 	 */
 
-	protected $additional_note;
+	protected $_additionalNote;
 
 	/**
 	 * @ORM\Column(name="user_name",type="varchar");
 	 */
 
-	protected $user_name;
+	protected $_userName;
 
 	/**
 	 * @ORM\Column(name="user_email",type="varchar");
 	 */
 
-	protected $user_email;
+	protected $_userEmail;
 
 	/**
 
@@ -131,22 +131,22 @@ class CompanyListing {
 	*/
 	public function populate($data = array())
 	{
-		$this->_cId = $data['c_id'];
+		$this->_cId = $data['_cid'];
 		$this->_cName = $data['cname'];
 		$this->_subCategoryOne = $data['sub_category1'];
-		$this->sub_category2 = $data['sub_category2'];
-		$this->sub_category3 = $data['sub_category3'];
-		$this->company_url = $data['company_url'];
-		$this->department = $data['department'];
-		$this->phone_number = $data['phone_number'];
-		$this->step_to_reach = $data['step_to_reach'];
-		$this->customer_service_link = $data['customer_service_link'];
-		$this->customer_support_email = $data['customer_support_email'];
-		$this->operation_hours = $data['operation_hours'];
-		$this->description = $data['description'];
-		$this->additional_note = $data['additional_note'];
-		$this->user_name = $data['user_name'];
-		$this->user_email = $data['user_email'];
+		$this->_subCategoryTwo = $data['sub_category2'];
+		$this->_subCategoryThree = $data['sub_category3'];
+		$this->_companyUrl = $data['company_url'];
+		$this->_department = $data['department'];
+		$this->_phoneNumber = $data['phone_number'];
+		$this->_stepToReach = $data['step_to_reach'];
+		$this->_customerServiceLink = $data['customer_service_link'];
+		$this->_customerSupportEmail = $data['customer_support_email'];
+		$this->_operationHours = $data['operation_hours'];
+		$this->_description = $data['description'];
+		$this->_additionalNote = $data['additional_note'];
+		$this->_userName = $data['user_name'];
+		$this->_userEmail = $data['user_email'];
 
 	}
 
@@ -193,7 +193,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getSub_category2()
+	public function getSubCategoryTwo()
 	{
 		return $this->sub_category2;
 	}
@@ -204,7 +204,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getSub_category3()
+	public function getSubCategoryThree()
 	{
 		return $this->sub_category3;
 	}
@@ -215,7 +215,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getCompany_url()
+	public function getCompanyUrl()
 	{
 		return $this->company_url;
 	}
@@ -237,7 +237,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getPhone_number()
+	public function getPhoneNumber()
 	{
 		return $this->phone_number;
 	}
@@ -248,7 +248,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getStep_to_reach()
+	public function getStepToReach()
 	{
 		return $this->step_to_reach;
 	}
@@ -259,7 +259,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getCustomer_service_link()
+	public function getCustomerServiceLink()
 	{
 		return $this->customer_service_link;
 	}
@@ -270,7 +270,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getCustomer_support_email()
+	public function getCustomerSupportEmail()
 	{
 		return $this->customer_support_email;
 	}
@@ -281,7 +281,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getOperation_hours()
+	public function getOperationHours()
 	{
 		return $this->operation_hours;
 	}
@@ -303,7 +303,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getAdditional_note()
+	public function getAdditionalNote()
 	{
 		return $this->additional_note;
 	}
@@ -314,7 +314,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getUser_name()
+	public function getUserName()
 	{
 		return $this->user_name;
 	}
@@ -325,7 +325,7 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getUser_emaile()
+	public function getUserEmail()
 	{
 		return $this->user_email;
 	}

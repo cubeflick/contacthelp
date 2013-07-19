@@ -70,25 +70,25 @@ class IndexController extends AbstractActionController
 //     		$formValidator = new CategoryFormValidator();
 //     		$form->setInputFilter($formValidator->getInputFilter());
     		$form->setData($request->getPost());
-    		echo "<pre>";
-    		print_r($request->getPost()); 
+//     		echo "<pre>";
+//     		print_r($request->getPost()); 
     		
     		
 //     		if($form->isValid()){
 //     			{
     				
-     		echo "Inside valid";
-			die;
+     		//echo "Inside valid";
+			//die;
     				$em->persist($listing);
     				$em->flush();
-    				$this->flashMessenger()->addMessage('Category added successfully','success');
+    				$this->flashMessenger()->addMessage('Listing added successfully','success');
 //    				return $this->redirect()->toRoute('managecategory');
 //     			}
 //     		}
     		 
     	}
     	
-    	die;
+    	//die;
     	 
     	return array('form' => $form);
     	
