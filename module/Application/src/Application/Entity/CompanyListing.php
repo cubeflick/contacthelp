@@ -10,29 +10,39 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="company_listing")
  */
 
+//@TODO Property Name does not use any underscore of hyphone, see first three property and change others
+// only protected property will start with $_
+// does not use numerics in property,
+// Name should be like this - 
+// if name has multiple words then property name will be like firstwordSecondwordThirdWord
+// change other properties like first three in populate
+// name of the getter functions will be like 
+// getFirstwordSecondword ie getCId, getCName , getSubCategoryOne 
+
+
 class CompanyListing {
 	/**
 	 * @ORM\c_id
 	 * @ORM\Column(type="integer");
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	protected $c_id = null ;
+	protected $_cId = null ;
 
 	/**
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(name="c_name",type="string")
 	 */
-	protected $c_name;
+	protected $_cName;
 
 	/**
 	 * @ORM\Column(name="sub_category1",type="varchar");
 	 */
 
-	protected $sub_category1;
+	protected $_subCategoryOne;
 	/**
 	 * @ORM\Column(name="sub_category2",type="varchar");
 	 */
 
-	protected $sub_category2;
+	protected $_subCategoryTwo;
 
 	/**
 	 * @ORM\Column(name="sub_category3",type="varchar");
@@ -121,9 +131,9 @@ class CompanyListing {
 	*/
 	public function populate($data = array())
 	{
-		$this->c_id = $data['c_id'];
-		$this->c_name = $data['_cname'];
-		$this->sub_category1 = $data['sub_category1'];
+		$this->_cId = $data['c_id'];
+		$this->_cName = $data['cname'];
+		$this->_subCategoryOne = $data['sub_category1'];
 		$this->sub_category2 = $data['sub_category2'];
 		$this->sub_category3 = $data['sub_category3'];
 		$this->company_url = $data['company_url'];
@@ -151,9 +161,9 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getC_id()
+	public function getCId()
 	{
-		return $this->c_id;
+		return $this->_cId;
 	}
 	/**
 	 * Returns the Text Content
@@ -161,9 +171,9 @@ class CompanyListing {
 	 * @access public
 	 * @return string
 	 */
-	public function getC_name()
+	public function getCName()
 	{
-		return $this->c_name;
+		return $this->_cName;
 	}
 
 	/**
@@ -172,9 +182,9 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getSub_category1()
+	public function getSubCategoryOne()
 	{
-		return $this->sub_category1;
+		return $this->_subCategoryOne;
 	}
 
 	/**

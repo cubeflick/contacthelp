@@ -3,11 +3,7 @@
 namespace Application\Controller;
 
 use Application\Entity\CompanyListing;
-
 use Application\Form\listing;
-
-
-
 use Zend\Mvc\Controller\AbstractActionController,
 Zend\View\Model\ViewModel,
 Category\Form\CategoryFormValidator,
@@ -16,14 +12,9 @@ Doctrine\ORM\EntityManager,
 Application\Entity\Company_listing,
 Zend\Paginator;
 
-
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
 use Doctrine\ORM\Tools\Pagination\Paginator as ORMPaginator;
 use Zend\Paginator\Paginator as ZPaginator;
-
-
-
-
 
 class IndexController extends AbstractActionController
 {
@@ -76,22 +67,29 @@ class IndexController extends AbstractActionController
     	
     	if($request->isPost())
     	{
-    		$formValidator = new CategoryFormValidator();
-    		$form->setInputFilter($formValidator->getInputFilter());
+//     		$formValidator = new CategoryFormValidator();
+//     		$form->setInputFilter($formValidator->getInputFilter());
     		$form->setData($request->getPost());
-    	
-    		if($form->isValid()){
-    			{
+    		echo "<pre>";
+    		print_r($request->getPost()); 
+    		
+    		
+//     		if($form->isValid()){
+//     			{
+    				
+     		echo "Inside valid";
+			die;
     				$em->persist($listing);
     				$em->flush();
     				$this->flashMessenger()->addMessage('Category added successfully','success');
-   				return $this->redirect()->toRoute('managecategory');
-    			}
-    		}
+//    				return $this->redirect()->toRoute('managecategory');
+//     			}
+//     		}
     		 
     	}
     	
-    	
+    	die;
+    	 
     	return array('form' => $form);
     	
     }

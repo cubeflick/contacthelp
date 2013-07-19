@@ -15,7 +15,7 @@ class Listing extends Form
         $this->setAttribute('method', 'post'); 
         
         $this->add(array( 
-            'name' => 'Listing_Name', 
+            'name' => 'listing_name', 
             'type' => 'Zend\Form\Element\Text', 
             'attributes' => array( 
             	'class' => 'login-inp',
