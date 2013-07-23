@@ -22,8 +22,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 class CompanyListing {
 	/**
-	 * @ORM\listing_id
-	 * @ORM\Column(type="integer");
+	 * @ORM\Id
+	 * @ORM\Column(type="integer",name="listing_id");
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $_listingId = null ;
@@ -161,9 +161,9 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getCId()
+	public function getlistingId()
 	{
-		return $this->_cId;
+		return $this->_listingId;
 	}
 	/**
 	 * Returns the Text Content
