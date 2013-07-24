@@ -31,7 +31,17 @@ return array(
         			),
         		),
         	),
-            'application' => array(
+        	'addlisting' => array(
+        		'type' => 'Zend\Mvc\Router\Http\Literal',
+        		'options' => array(
+        			'route'    => '/listing/add',
+        			'defaults' => array(
+        				'controller' => 'Application\Controller\Index',
+        				'action'     => 'listing',
+        			),
+        		),
+        	),
+        	'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
                     'route'    => '/application',
