@@ -163,11 +163,11 @@ class CompanyListing {
 	 */
 	public function getlistingId()
 	{
-<<<<<<< HEAD
+
 		return $this->listingId;
-=======
+
 		return $this->_listingId;
->>>>>>> 998fb4a70ac55a5eedf71e8878ff049fdbfbf682
+
 	}
 	/**
 	 * Returns the Text Content
@@ -177,11 +177,11 @@ class CompanyListing {
 	 */
 	public function getListingName()
 	{
-<<<<<<< HEAD
+
 		return $this->listingName;
-=======
+
 		return $this->_listingName;
->>>>>>> 998fb4a70ac55a5eedf71e8878ff049fdbfbf682
+
 	}
 
 	/**
