@@ -163,7 +163,7 @@ class CompanyListing {
 	 */
 	public function getCId()
 	{
-		return $this->_cId;
+		return $this->listingId;
 	}
 	/**
 	 * Returns the Text Content
@@ -173,7 +173,7 @@ class CompanyListing {
 	 */
 	public function getCName()
 	{
-		return $this->_cName;
+		return $this->listingName;
 	}
 
 	/**
@@ -184,7 +184,7 @@ class CompanyListing {
 	 */
 	public function getSubCategoryOne()
 	{
-		return $this->_subCategoryOne;
+		return $this->subCategoryOne;
 	}
 
 	/**
@@ -195,7 +195,7 @@ class CompanyListing {
 	 */
 	public function getSubCategoryTwo()
 	{
-		return $this->sub_category2;
+		return $this->subCategoryTwo;
 	}
 
 	/**
@@ -206,7 +206,7 @@ class CompanyListing {
 	 */
 	public function getSubCategoryThree()
 	{
-		return $this->sub_category3;
+		return $this->subCategoryThree;
 	}
 
 	/**
@@ -217,7 +217,7 @@ class CompanyListing {
 	 */
 	public function getCompanyUrl()
 	{
-		return $this->company_url;
+		return $this->companyUrl;
 	}
 
 	/**
@@ -250,7 +250,7 @@ class CompanyListing {
 	 */
 	public function getStepToReach()
 	{
-		return $this->step_to_reach;
+		return $this->stepToReach;
 	}
 
 	/**
@@ -261,7 +261,7 @@ class CompanyListing {
 	 */
 	public function getCustomerServiceLink()
 	{
-		return $this->customer_service_link;
+		return $this->customerServiceLink;
 	}
 
 	/**
@@ -272,7 +272,7 @@ class CompanyListing {
 	 */
 	public function getCustomerSupportEmail()
 	{
-		return $this->customer_support_email;
+		return $this->customerSupportEmail;
 	}
 
 	/**
@@ -283,7 +283,7 @@ class CompanyListing {
 	 */
 	public function getOperationHours()
 	{
-		return $this->operation_hours;
+		return $this->operationHours;
 	}
 
 	/**
@@ -305,7 +305,7 @@ class CompanyListing {
 	 */
 	public function getAdditionalNote()
 	{
-		return $this->additional_note;
+		return $this->additionalNote;
 	}
 
 	/**
@@ -316,7 +316,7 @@ class CompanyListing {
 	 */
 	public function getUserName()
 	{
-		return $this->user_name;
+		return $this->userName;
 	}
 
 	/**
@@ -327,7 +327,7 @@ class CompanyListing {
 	 */
 	public function getUserEmail()
 	{
-		return $this->user_email;
+		return $this->userEmail;
 	}
 
 	//     /**
