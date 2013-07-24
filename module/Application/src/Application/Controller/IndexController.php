@@ -69,8 +69,8 @@ class IndexController extends AbstractActionController
 //     		$formValidator = new CategoryFormValidator();
 //     		$form->setInputFilter($formValidator->getInputFilter());
     		$form->setData($request->getPost());
-    		echo "<pre>";
-    		print_r($request->getPost()); 
+    		
+    		 
     		
     		
 //     		if($form->isValid()){
@@ -85,7 +85,7 @@ class IndexController extends AbstractActionController
 //    				return $this->redirect()->toRoute('managecategory');
 //     			}
 //     		}
-    				die;
+    				
     				
     	}
     	
