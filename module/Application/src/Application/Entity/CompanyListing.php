@@ -22,8 +22,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 class CompanyListing {
 	/**
-	 * @ORM\listing_id
-	 * @ORM\Column(type="integer");
+	 * @ORM\Id
+	 * @ORM\Column(type="integer",name="listing_id");
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
 	protected $_listingId = null ;
@@ -34,83 +34,83 @@ class CompanyListing {
 	protected $_listingName;
 
 	/**
-	 * @ORM\Column(name="sub_category1",type="varchar");
+	 * @ORM\Column(name="sub_category_one",type="string");
 	 */
 
 	protected $_subCategoryOne;
 	/**
-	 * @ORM\Column(name="sub_category2",type="varchar");
+	 * @ORM\Column(name="sub_category_two",type="string");
 	 */
 
 	protected $_subCategoryTwo;
 
 	/**
-	 * @ORM\Column(name="sub_category3",type="varchar");
+	 * @ORM\Column(name="sub_category_three",type="string");
 	 */
 
 	protected $_subcategoryThree;
 
 	/**
-	 * @ORM\Column(name="company_url",type="varchar");
+	 * @ORM\Column(name="company_url",type="string");
 	 */
 
 	protected $_companyUrl;
 
 	/**
-	 * @ORM\Column(name="department",type="varchar");
+	 * @ORM\Column(name="department",type="string");
 	 */
 
 	protected $_department;
 
 	/**
-	 * @ORM\Column(name="phone_number",type="varchar");
+	 * @ORM\Column(name="phone_number",type="string");
 	 */
 
 	protected $_phoneNumber;
 
 	/**
-	 * @ORM\Column(name="step_to_reach",type="varchar");
+	 * @ORM\Column(name="step_to_reach",type="string");
 	 */
 
 	protected $_stepToReach;
 
 	/**
-	 * @ORM\Column(name="customer_service_link",type="varchar");
+	 * @ORM\Column(name="customer_service_link",type="string");
 	 */
 
 	protected $_customerServiceLink;
 
 	/**
-	 * @ORM\Column(name="customer_support_email",type="varchar");
+	 * @ORM\Column(name="customer_support_email",type="string");
 	 */
 
 	protected $_customerSupportEmail;
 
 	/**
-	 * @ORM\Column(name="operation_hours",type="varchar");
+	 * @ORM\Column(name="operation_hours",type="string");
 	 */
 
 	protected $_operationHours;
 
 	/**
-	 * @ORM\Column(type="string")
+	 * @ORM\Column(name="description",type="string")
 	 */
 	protected $_description;
 
 	/**
-	 * @ORM\Column(name="additional_note",type="varchar");
+	 * @ORM\Column(name="additional_note",type="string");
 	 */
 
 	protected $_additionalNote;
 
 	/**
-	 * @ORM\Column(name="user_name",type="varchar");
+	 * @ORM\Column(name="user_name",type="string");
 	 */
 
 	protected $_userName;
 
 	/**
-	 * @ORM\Column(name="user_email",type="varchar");
+	 * @ORM\Column(name="user_email",type="string");
 	 */
 
 	protected $_userEmail;
@@ -161,9 +161,13 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getCId()
+	public function getlistingId()
 	{
+<<<<<<< HEAD
 		return $this->listingId;
+=======
+		return $this->_listingId;
+>>>>>>> 998fb4a70ac55a5eedf71e8878ff049fdbfbf682
 	}
 	/**
 	 * Returns the Text Content
@@ -171,9 +175,13 @@ class CompanyListing {
 	 * @access public
 	 * @return string
 	 */
-	public function getCName()
+	public function getListingName()
 	{
+<<<<<<< HEAD
 		return $this->listingName;
+=======
+		return $this->_listingName;
+>>>>>>> 998fb4a70ac55a5eedf71e8878ff049fdbfbf682
 	}
 
 	/**
@@ -195,7 +203,11 @@ class CompanyListing {
 	 */
 	public function getSubCategoryTwo()
 	{
+
 		return $this->subCategoryTwo;
+
+		return $this->sub_category_two;
+
 	}
 
 	/**

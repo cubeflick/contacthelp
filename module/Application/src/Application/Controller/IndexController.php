@@ -76,11 +76,12 @@ class IndexController extends AbstractActionController
 //     		if($form->isValid()){
 //     			{
     				
-     		echo "Inside valid";
 
     				$em->persist($listing);
     				$em->flush();
     				$this->flashMessenger()->addMessage('Listing added successfully','success');
+    				echo "Data Saved";
+    				
 //    				return $this->redirect()->toRoute('managecategory');
 //     			}
 //     		}
