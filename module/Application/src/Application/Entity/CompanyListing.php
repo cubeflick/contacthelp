@@ -23,10 +23,10 @@ use Doctrine\ORM\Mapping as ORM;
 class CompanyListing {
 	/**
 	 * @ORM\Id
-	 * @ORM\Column(type="integer",name="listing_id");
+	 * @ORM\Column(type="integer",name="id");
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 */
-	protected $_listingId = null ;
+	protected $_id = null ;
 
 	/**
 	 * @ORM\Column(name="listing_name",type="string")
