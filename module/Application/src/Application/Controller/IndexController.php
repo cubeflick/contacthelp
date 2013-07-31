@@ -53,6 +53,50 @@ class IndexController extends AbstractActionController
     	
     }
     
+    public function managelistingAction()
+    
+    {
+    	$this->layout('layout/layout_admin');
+		$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+		$em = $this->getEntityManager();
+		
+		if($authService->hasIdentity())
+		{
+			$loggedInUser = $authService->getIdentity();
+			$this->layout()->loggedInUser = $loggedInUser;
+			
+			$messages = $this->flashMessenger()->getMessages();
+			
+			$query = $em->createQuery('select list, list._listingId, list._listingName, list._subCategoryOne, list._subCategoryTwo, 
+					list._subCategoryThree, list._companyUrl, list._department, list._phoneNumber, list._stepToReach,
+					 list._customerServiceLink, list._customerSupportEmail, list._operationHours, list._description,
+					list._additionalNote, list._userName, list._userEmail from Application\Entity\CompanyListing list ');
+			
+			$paginator = new ZPaginator(
+					new DoctrinePaginator(new ORMPaginator($query))
+			);
+			// 			echo "<pre>";
+			// 			print_r($this->params());
+			// 			die;
+			$paginator->setCurrentPageNumber($this->params('page',1))
+			->setItemCountPerPage(10);
+			
+			return new ViewModel(array(
+					'messages' => $messages,
+					'paginator' => $paginator
+			));
+			
+		}
+		else
+		{
+			return $this->redirect()->toRoute('login');
+		}
+    	
+    	
+    }
+    
+    
     public function listingAction()
     
     {

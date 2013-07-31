@@ -170,7 +170,10 @@ abstract class Proxy
     	}
     }
     
-    
+    public function saveListings(Company_listing $category)
+    {
+    	
+    }
     
     
     

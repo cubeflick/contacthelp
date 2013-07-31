@@ -48,7 +48,7 @@ class CompanyListing {
 	 * @ORM\Column(name="sub_category_three",type="string");
 	 */
 
-	protected $_subcategoryThree;
+	protected $_subCategoryThree;
 
 	/**
 	 * @ORM\Column(name="company_url",type="string");
@@ -114,7 +114,14 @@ class CompanyListing {
 	 */
 
 	protected $_userEmail;
+	
+	
+	/**
+	 * @ORM\Column(name="status",type="integer")
+	 */
 
+	protected $_status;
+	
 	/**
 
 	/**
