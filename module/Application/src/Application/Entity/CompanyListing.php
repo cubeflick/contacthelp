@@ -168,12 +168,12 @@ class CompanyListing {
 	 * @access public
 	 * @return int
 	 */
-	public function getlistingId()
+	public function getListingId()
 	{
 
-		return $this->listingId;
+// 		return $this->listingId;
 
-		return $this->_listingId;
+		return $this->_id;
 
 	}
 	/**
@@ -185,7 +185,7 @@ class CompanyListing {
 	public function getListingName()
 	{
 
-		return $this->listingName;
+// 		return $this->listingName;
 
 		return $this->_listingName;
 
@@ -199,7 +199,7 @@ class CompanyListing {
 	 */
 	public function getSubCategoryOne()
 	{
-		return $this->subCategoryOne;
+		return $this->_subCategoryOne;
 	}
 
 	/**
@@ -211,9 +211,9 @@ class CompanyListing {
 	public function getSubCategoryTwo()
 	{
 
-		return $this->subCategoryTwo;
+		return $this->_subCategoryTwo;
 
-		return $this->sub_category_two;
+// 		return $this->sub_category_two;
 
 	}
 
@@ -225,7 +225,7 @@ class CompanyListing {
 	 */
 	public function getSubCategoryThree()
 	{
-		return $this->subCategoryThree;
+		return $this->_subCategoryThree;
 	}
 
 	/**
@@ -236,7 +236,7 @@ class CompanyListing {
 	 */
 	public function getCompanyUrl()
 	{
-		return $this->companyUrl;
+		return $this->_companyUrl;
 	}
 
 	/**
@@ -247,7 +247,7 @@ class CompanyListing {
 	 */
 	public function getDepartment()
 	{
-		return $this->department;
+		return $this->_department;
 	}
 
 	/**
@@ -258,7 +258,7 @@ class CompanyListing {
 	 */
 	public function getPhoneNumber()
 	{
-		return $this->phone_number;
+		return $this->_phoneNumber;
 	}
 
 	/**
@@ -269,7 +269,7 @@ class CompanyListing {
 	 */
 	public function getStepToReach()
 	{
-		return $this->stepToReach;
+		return $this->_stepToReach;
 	}
 
 	/**
@@ -280,7 +280,7 @@ class CompanyListing {
 	 */
 	public function getCustomerServiceLink()
 	{
-		return $this->customerServiceLink;
+		return $this->_customerServiceLink;
 	}
 
 	/**
@@ -291,7 +291,7 @@ class CompanyListing {
 	 */
 	public function getCustomerSupportEmail()
 	{
-		return $this->customerSupportEmail;
+		return $this->_customerSupportEmail;
 	}
 
 	/**
@@ -302,7 +302,7 @@ class CompanyListing {
 	 */
 	public function getOperationHours()
 	{
-		return $this->operationHours;
+		return $this->_operationHours;
 	}
 
 	/**
@@ -313,7 +313,7 @@ class CompanyListing {
 	 */
 	public function getDescription()
 	{
-		return $this->description;
+		return $this->_description;
 	}
 
 	/**
@@ -324,7 +324,7 @@ class CompanyListing {
 	 */
 	public function getAdditionalNote()
 	{
-		return $this->additionalNote;
+		return $this->_additionalNote;
 	}
 
 	/**
@@ -335,7 +335,7 @@ class CompanyListing {
 	 */
 	public function getUserName()
 	{
-		return $this->userName;
+		return $this->_userName;
 	}
 
 	/**
@@ -346,7 +346,7 @@ class CompanyListing {
 	 */
 	public function getUserEmail()
 	{
-		return $this->userEmail;
+		return $this->_userEmail;
 	}
 
 	//     /**

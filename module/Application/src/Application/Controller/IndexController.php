@@ -2,6 +2,8 @@
 
 namespace Application\Controller;
 
+use Zend\Filter\Null;
+
 use Application\Entity\CompanyListing;
 use Application\Form\listing;
 use Zend\Mvc\Controller\AbstractActionController,
@@ -113,8 +115,8 @@ class IndexController extends AbstractActionController
     	
     	
     	
-
-    	$resultset = $repository->findBy(array('_subCategoryOne'=>null));
+        
+    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
     	/*
     	 * Get the array hydrator of entity
     	*/
@@ -124,11 +126,12 @@ class IndexController extends AbstractActionController
     	$arrayOptions = array();
     	foreach ( $resultset as $key => $result)
     	{
-    		$arrayOptions[$result->getlistingId()] = $result->getListingName();
+    		$arrayOptions[$result->getListingId()] = $result->getSubCategoryOne();
     	}
     	 
     	$form = new Listing();
     	$form->get('sub_category_one')->setAttribute('options', $arrayOptions);
+   
     	
     	
     	if($request->isPost())
