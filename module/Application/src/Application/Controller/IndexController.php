@@ -101,13 +101,35 @@ class IndexController extends AbstractActionController
     public function listingAction()
     
     {
-    	$em = $this->getEntityManager();
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+        $em = $this->getEntityManager();
     	
     	$form = new Listing();
-    	$request = $this->getRequest();
+    	
     	
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
+    	
+    	
+    	
+
+    	$resultset = $repository->findBy(array('_subCategoryOne'=>null));
+    	/*
+    	 * Get the array hydrator of entity
+    	*/
+//     	print_r($resultset);
+//     	die; 
+    	
+    	$arrayOptions = array();
+    	foreach ( $resultset as $key => $result)
+    	{
+    		$arrayOptions[$result->getId()] = $result->getName();
+    	}
+    	 
+    	$form = new Listing();
+    	$form->get('sub_category_one')->setAttribute('options', $arrayOptions);
+    	
     	
     	if($request->isPost())
     	{

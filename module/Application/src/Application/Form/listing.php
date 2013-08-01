@@ -103,7 +103,7 @@ class Listing extends Form
         
         $this->add(array(
         		'name' => 'sub_category_one',
-        		'type' => 'Zend\Form\Element\Text',
+        		'type' => 'Zend\Form\Element\Select',
         		'attributes' => array(
         				'class' => 'inp-form',
         				
@@ -115,7 +115,7 @@ class Listing extends Form
         
         $this->add(array(
         		'name' => 'sub_category_two',
-        		'type' => 'Zend\Form\Element\Text',
+        		'type' => 'Zend\Form\Element\Select',
         		'attributes' => array(
         				'class' => 'inp-form',
         				
@@ -127,7 +127,7 @@ class Listing extends Form
         
         $this->add(array(
         		'name' => 'sub_category_three',
-        		'type' => 'Zend\Form\Element\Text',
+        		'type' => 'Zend\Form\Element\Select',
         		'attributes' => array(
         				'class' => 'inp-form',
         				
