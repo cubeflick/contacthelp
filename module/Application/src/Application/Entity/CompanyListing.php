@@ -138,7 +138,7 @@ class CompanyListing {
 	*/
 	public function populate($data = array())
 	{
-		$this->_listingId = $data['listing_id'];
+		$this->_id = $data['listing_id'];
 		$this->_listingName = $data['listing_name'];
 		$this->_subCategoryOne = $data['sub_category_one'];
 		$this->_subCategoryTwo = $data['sub_category_two'];

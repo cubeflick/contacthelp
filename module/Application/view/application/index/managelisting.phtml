@@ -54,13 +54,27 @@ MSG;
 
 			
 
-			<h3><a href="<?php echo $this->url('add'); ?>">Add Category</a></h3>
+			
 
 <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
 				<tbody><tr>
 					<th class="table-header-repeat line-left"><a href="">No</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Category Name</a>	</th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Category Description</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Listing Name</a>	</th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Sub Category1</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Sub Category2</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Sub Category3</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Company URL</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Department</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Phone Number</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Step To Reach</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Customer Service Link</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Customer Support Email</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Operation Hours</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Description</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Additional Note</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">User Name</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">User Email</a></th>
+					<th class="table-header-repeat line-left minwidth-1"><a href="">Status</a></th>
 					<th class="table-header-options line-left"><a href="">Options</a></th>
 				</tr>
 			<?php 
@@ -77,7 +91,7 @@ MSG;
 
 				foreach($paginator as $listing)
 
-				foreach($paginator as $row)
+				
 
 				{	
 			?>
@@ -85,14 +99,24 @@ MSG;
 					<td><?php echo $i; ?></td>
 
 					<td><?php echo $listing['_listingName']; ?></td>
-					<td><?php echo $listing['list._department']; ?></td>
+					<td><?php echo $listing['_subCategoryOne']; ?></td>
+					<td><?php echo $listing['_subCategoryTwo']; ?></td>
+					<td><?php echo $listing['_subCategoryThree']; ?></td>
+					<td><?php echo $listing['_companyUrl']; ?></td>
+					<td><?php echo $listing['_department']; ?></td>
+					<td><?php echo $listing['_phoneNumber']; ?></td>
+					<td><?php echo $listing['_stepToReach']; ?></td>
+					<td><?php echo $listing['_customerServiceLink']; ?></td>
+					<td><?php echo $listing['_customerSupportEmail']; ?></td>
+					<td><?php echo $listing['_operationHours']; ?></td>
+					<td><?php echo $listing['_description']; ?></td>
+					<td><?php echo $listing['_additionalNote']; ?></td>
+					<td><?php echo $listing['_userName']; ?></td>
+					<td><?php echo $listing['_userEmail']; ?></td>
+					<td><?php echo $listing['_status']; ?></td>
+					
 					<td class="options-width">
-					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$category['id'])); ?>"></a>
-
-					<td><?php echo $row['_listingName']; ?></td>
-					<td><?php echo $row['_subCategoryOne']; ?></td>
-					<td class="options-width">
-					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$row['id'])); ?>"></a>
+					<a class="icon-1 info-tooltip" href="<?php echo $this->url('category',array('action'=>'edit','id'=>$listing['_id'])); ?>"></a>
 
 					<a class="icon-2 info-tooltip" href=""></a>
 					<a class="icon-5 info-tooltip" href=""></a>

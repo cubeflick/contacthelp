@@ -68,7 +68,10 @@ class IndexController extends AbstractActionController
 			
 			$messages = $this->flashMessenger()->getMessages();
 			
-			$query = $em->createQuery('select list,list._id,list._listingName,list._subCategoryOne from Application\Entity\CompanyListing list');
+			$query = $em->createQuery('select list,list._id,list._listingName,list._subCategoryOne,list._subCategoryTwo,list._subCategoryThree,
+					list._companyUrl,list._department,list._phoneNumber,list._stepToReach,list._customerServiceLink,
+					list._customerSupportEmail,list._operationHours,list._description,list._additionalNote,list._userName,
+					list._userEmail,list._status from Application\Entity\CompanyListing list');
 			
 			
 			$paginator = new ZPaginator(
