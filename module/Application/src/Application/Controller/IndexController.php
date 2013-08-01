@@ -124,7 +124,7 @@ class IndexController extends AbstractActionController
     	$arrayOptions = array();
     	foreach ( $resultset as $key => $result)
     	{
-    		$arrayOptions[$result->getId()] = $result->getName();
+    		$arrayOptions[$result->getlistingId()] = $result->getListingName();
     	}
     	 
     	$form = new Listing();
