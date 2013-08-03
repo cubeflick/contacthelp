@@ -2,6 +2,8 @@
 
 namespace Application\Controller;
 
+use Zend\Validator\NotEmpty;
+
 use Zend\Filter\Null;
 
 use Application\Entity\CompanyListing;
@@ -11,6 +13,7 @@ Zend\View\Model\ViewModel,
 Category\Form\CategoryFormValidator,
 Zend\Mvc\Controller\ActionController,
 Doctrine\ORM\EntityManager,
+
 Zend\Paginator;
 
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
@@ -75,6 +78,8 @@ class IndexController extends AbstractActionController
 					list._customerSupportEmail,list._operationHours,list._description,list._additionalNote,list._userName,
 					list._userEmail,list._status from Application\Entity\CompanyListing list');
 			
+// 						print_r($query);
+// 						die;
 			
 			$paginator = new ZPaginator(
 					new DoctrinePaginator(new ORMPaginator($query))
@@ -104,7 +109,7 @@ class IndexController extends AbstractActionController
     
     {
     	$request = $this->getRequest();
-    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
         $em = $this->getEntityManager();
     	
     	$form = new Listing();
@@ -113,25 +118,43 @@ class IndexController extends AbstractActionController
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     	
-    	
-    	
-        
-    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
+    	$resultset = $repository->findBy(array('parentId'=>null));
     	/*
     	 * Get the array hydrator of entity
     	*/
-//     	print_r($resultset);
-//     	die; 
-    	
-    	$arrayOptions = array();
-    	foreach ( $resultset as $key => $result)
-    	{
-    		$arrayOptions[$result->getListingId()] = $result->getSubCategoryOne();
-    	}
     	 
-    	$form = new Listing();
-    	$form->get('sub_category_one')->setAttribute('options', $arrayOptions);
-   
+    	$arrayOptions = array();
+    	foreach ($resultset as $key => $result)
+    	{
+    		$arrayOptions[$result->getId()] = $result->getName();
+    	}
+//     	print_r($arrayOptions);
+//     	die;
+  
+//     	$query = $em->createQuery('select cat.id, cat.cname, cat.description, childcat.cname as parent from Category\Entity\Category cat join Category\Entity\Category childcat with cat.parentId = childcat.id');
+//     	$subcats = $query->getResult();
+    	 
+    	$query = $em->createQuery("select cat.id, cat.cname, cat.description FROM Category\Entity\Category cat JOIN cat.parentId");
+    	$resutlset = $query->getResult();
+echo "<pre>";
+print_r($resutlset);
+    	die;
+    	$resultset1 = $repository->findAll();
+    	/*
+    	 * Get the array hydrator of entity
+    	*/
+    	
+    	$arrayOptions1 = array();
+    	foreach ($resultset1 as $key1 => $result1)
+    	{
+    		$arrayOptions1[$result1->getId()] = $result1->getName();
+    	}
+    	
+//     	print_r($resultset1[0]);
+//     	echo $resultset1[0]->getName();
+//        	die;
+    
+    	
     	
     	
     	if($request->isPost())
@@ -161,7 +184,11 @@ class IndexController extends AbstractActionController
     	
     	//die;
     	 
-    	return array('form' => $form);
+    	return array('form' => $form, 'category' => $arrayOptions, 'subcategory' => $resultset1);
+//     	return new ViewModel(array(
+    			 
+//     			'category' => $arrayOptions
+//     	));
     	
     }
     

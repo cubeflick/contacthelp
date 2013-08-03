@@ -107,18 +107,18 @@ class Category {
 	
 	
 	
-//     /**
-//      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
-//      */
-//     private $children;
+    /**
+     * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")
+     */
+    private $children;
 
-//     /**
-//      * @ORM\ManyToOne(targetEntity="Category",inversedBy="children")
-//      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
-//      */
-//     private $parent;
+    /**
+     * @ORM\ManyToOne(targetEntity="Category",inversedBy="children")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
+     */
+    private $parent;
 
-//     public function __construct() {
-//     	$this->children = new \Doctrine\Common\Collections\ArrayCollection();
-//     }    
+    public function __construct() {
+    	$this->children = new \Doctrine\Common\Collections\ArrayCollection();
+    }    
 }

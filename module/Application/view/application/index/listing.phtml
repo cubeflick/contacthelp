@@ -86,21 +86,64 @@
 	<tr>
 		<th valign="top">Category1:</th>
 		<td>
-				<?php echo $this->formSelect($form->get('sub_category_one')); ?>
+		<select class="inp-form" name="sub_category_one">
+		<option value=''>Select...</option>
+				<?php 
+				foreach($category as $key => $cat)
+				
+				{
+				
+				?>
+				<optgroup label=" <?php echo $cat; ?>">
+				
+				<?php 
+					
+				}
+			?>
+			</select>
 		</td>
 		<td></td>
 	</tr>
 	<tr>
 		<th valign="top">Category2:</th>
 		<td>
-				<?php echo $this->formSelect($form->get('sub_category_two')); ?>
+		<select class="inp-form" name="sub_category_two">
+		<option value=''>Select...</option>
+		<?php 
+				foreach($subcategory as $key => $cat)
+				
+				{
+					if($cat->getParentId() == null)
+					{
+				?>
+				<optgroup label=" <?php echo $cat->getName(); ?>">
+				
+				<?php 
+					}	
+				}
+			?>
+			</select>
 		</td>
 		<td></td>
 	</tr>
 	<tr>
 		<th valign="top">Category3:</th>
 		<td>
-				<?php echo $this->formSelect($form->get('sub_category_three')); ?>
+				<select class="inp-form" name="sub_category_three">
+				<option value=''>Select...</option>
+				<?php 
+				foreach($category as $key => $cat)
+				
+				{
+				
+				?>
+				<optgroup label=" <?php echo $cat; ?>">
+				
+				<?php 
+					
+				}
+			?>
+				</select>
 		</td>
 		<td></td>
 	</tr>
