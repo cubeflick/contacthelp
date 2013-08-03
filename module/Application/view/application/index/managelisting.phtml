@@ -65,16 +65,7 @@ MSG;
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Sub Category3</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Company URL</a></th>
 					<th class="table-header-repeat line-left minwidth-1"><a href="">Department</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Phone Number</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Step To Reach</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Customer Service Link</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Customer Support Email</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Operation Hours</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Description</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Additional Note</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">User Name</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">User Email</a></th>
-					<th class="table-header-repeat line-left minwidth-1"><a href="">Status</a></th>
+					
 					<th class="table-header-options line-left"><a href="">Options</a></th>
 				</tr>
 			<?php 
@@ -104,20 +95,10 @@ MSG;
 					<td><?php echo $listing['_subCategoryThree']; ?></td>
 					<td><?php echo $listing['_companyUrl']; ?></td>
 					<td><?php echo $listing['_department']; ?></td>
-					<td><?php echo $listing['_phoneNumber']; ?></td>
-					<td><?php echo $listing['_stepToReach']; ?></td>
-					<td><?php echo $listing['_customerServiceLink']; ?></td>
-					<td><?php echo $listing['_customerSupportEmail']; ?></td>
-					<td><?php echo $listing['_operationHours']; ?></td>
-					<td><?php echo $listing['_description']; ?></td>
-					<td><?php echo $listing['_additionalNote']; ?></td>
-					<td><?php echo $listing['_userName']; ?></td>
-					<td><?php echo $listing['_userEmail']; ?></td>
-					<td><?php echo $listing['_status']; ?></td>
+					
 					
 					<td class="options-width">
-						<a class="icon-2 info-tooltip" title="DisApprove" alt="DisApprove" href=""></a>
-					<a class="icon-5 info-tooltip" title="Approve" alt="Approve" href=""></a>
+					<a class="icon-1 info-tooltip" title="Show Details" alt="Show Details" href=""></a>
 					</td>
 				</tr>
 			<?php 
@@ -125,7 +106,7 @@ MSG;
 				}
 			?>
 			
-				<tr><td colspan="4"><?php echo $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?></td></tr>
+				<tr><td colspan="8"><?php echo $paginationControl = $this->paginationControl($this->paginator, 'All', '_partials/paginator.phtml') ?></td></tr>
 				</tbody></table>			
 			</div>
 			<!--  end table-content  -->
