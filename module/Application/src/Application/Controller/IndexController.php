@@ -134,11 +134,11 @@ class IndexController extends AbstractActionController
 //     	$query = $em->createQuery('select cat.id, cat.cname, cat.description, childcat.cname as parent from Category\Entity\Category cat join Category\Entity\Category childcat with cat.parentId = childcat.id');
 //     	$subcats = $query->getResult();
     	 
-    	$query = $em->createQuery("select cat.id, cat.cname, cat.description FROM Category\Entity\Category cat JOIN cat.parentId");
-    	$resutlset = $query->getResult();
-echo "<pre>";
-print_r($resutlset);
-    	die;
+//     	$query = $em->createQuery("select cat.id, cat.cname, cat.description FROM Category\Entity\Category cat JOIN cat.parentId");
+//     	$resutlset = $query->getResult();
+// echo "<pre>";
+// print_r($resutlset);
+//     	die;
     	$resultset1 = $repository->findAll();
     	/*
     	 * Get the array hydrator of entity

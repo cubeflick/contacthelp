@@ -115,11 +115,20 @@
 				{
 					if($cat->getParentId() == null)
 					{
+						$id = $cat->getId();
 				?>
-				<optgroup label=" <?php echo $cat->getName(); ?>">
+				<optgroup label=" <?php echo $cat->getName(); ?>"></optgroup>
 				
 				<?php 
-					}	
+					}
+					
+					if($cat->getParentId() == $id)
+					{
+					?>
+					<option><?php echo $cat->getName(); ?></option>
+					
+			<?php
+					}			
 				}
 			?>
 			</select>
