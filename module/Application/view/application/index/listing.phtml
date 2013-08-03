@@ -88,16 +88,22 @@
 		<td>
 		<select class="inp-form" name="sub_category_one">
 		<option value=''>Select...</option>
-				<?php 
+			<?php 
 				foreach($category as $key => $cat)
 				
 				{
-				
-				?>
-				<optgroup label=" <?php echo $cat; ?>">
-				
-				<?php 
+					?>
 					
+				<optgroup label=" <?php echo $key; ?>"></optgroup>
+				  <?php 
+				  foreach($cat as $key1 => $subcat)
+				  {
+				  	?>
+				  					  
+				  	<option><?php echo $subcat->getName(); ?></option>
+				  
+			<?php 	
+				    }		
 				}
 			?>
 			</select>
@@ -110,25 +116,21 @@
 		<select class="inp-form" name="sub_category_two">
 		<option value=''>Select...</option>
 		<?php 
-				foreach($subcategory as $key => $cat)
+				foreach($category as $key => $cat)
 				
 				{
-					if($cat->getParentId() == null)
-					{
-						$id = $cat->getId();
-				?>
-				<optgroup label=" <?php echo $cat->getName(); ?>"></optgroup>
-				
-				<?php 
-					}
-					
-					if($cat->getParentId() == $id)
-					{
 					?>
-					<option><?php echo $cat->getName(); ?></option>
 					
-			<?php
-					}			
+				<optgroup label=" <?php echo $key; ?>"></optgroup>
+				  <?php 
+				  foreach($cat as $key1 => $subcat)
+				  {
+				  	?>
+				  					  
+				  	<option><?php echo $subcat->getName(); ?></option>
+				  
+			<?php 	
+				    }		
 				}
 			?>
 			</select>
@@ -144,12 +146,18 @@
 				foreach($category as $key => $cat)
 				
 				{
-				
-				?>
-				<optgroup label=" <?php echo $cat; ?>">
-				
-				<?php 
+					?>
 					
+				<optgroup label=" <?php echo $key; ?>"></optgroup>
+				  <?php 
+				  foreach($cat as $key1 => $subcat)
+				  {
+				  	?>
+				  					  
+				  	<option><?php echo $subcat->getName(); ?></option>
+				  
+			<?php 	
+				    }		
 				}
 			?>
 				</select>
