@@ -90,6 +90,7 @@ class IndexController extends AbstractActionController
 			$paginator->setCurrentPageNumber($this->params('page',1))
 			->setItemCountPerPage(10);
 			
+			
 			return new ViewModel(array(
 					'messages' => $messages,
 					'paginator' => $paginator
@@ -99,8 +100,18 @@ class IndexController extends AbstractActionController
 		else
 		{
 			return $this->redirect()->toRoute('login');
+			
 		}
     	
+    	
+    }
+    
+    
+    public function manageAction()
+    
+    {
+    	$this->layout('layout/layout_admin');
+    	$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
     	
     }
     

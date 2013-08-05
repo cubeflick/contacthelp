@@ -41,6 +41,21 @@ return array(
         			),
         		),
         	),
+        	
+        	
+        	'manage_listing' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/manage',
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'manage',
+        							
+        					),
+        			),
+        	),
+        	
+        	
         	'application' => array(
                 'type'    => 'Literal',
                 'options' => array(
