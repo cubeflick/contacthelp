@@ -40,6 +40,7 @@ class IndexController extends AbstractActionController
 	
     public function indexAction()
     {
+    	
         return new ViewModel();
     }
     
@@ -111,8 +112,35 @@ class IndexController extends AbstractActionController
     
     {
     	$this->layout('layout/layout_admin');
-    	$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
-    	
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+		$em = $this->getEntityManager();
+		if($authService->hasIdentity())
+		{
+			
+			$loggedInUser = $authService->getIdentity();
+			$this->layout()->loggedInUser = $loggedInUser;
+				
+			$messages = $this->flashMessenger()->getMessages();
+				
+			$resultset = $repository->findBy(array('_id'=> 6));
+			$record = $resultset[0];
+// 									echo "<pre>";
+// 									print_r($resultset);
+// 									echo $record->getListingId();
+// 									die;
+
+			return array('record' => $record);
+					
+			
+		}
+		else
+		{
+			return $this->redirect()->toRoute('login');
+				
+		}
+		
+		
     }
     
     

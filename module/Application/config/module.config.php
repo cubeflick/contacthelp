@@ -47,6 +47,7 @@ return array(
         			'type' => 'Zend\Mvc\Router\Http\Literal',
         			'options' => array(
         					'route'    => '/manage',
+        					
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',
         							'action'     => 'manage',
