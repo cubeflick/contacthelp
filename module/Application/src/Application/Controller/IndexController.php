@@ -40,8 +40,9 @@ class IndexController extends AbstractActionController
 	
     public function indexAction()
     {
-    	
+    	$this->categoryAction();
         return new ViewModel();
+        
     }
     
     public function aboutAction()
@@ -53,8 +54,24 @@ class IndexController extends AbstractActionController
     public function categoryAction()
     
     {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+        $em = $this->getEntityManager();
+    	
+    	$form = new Listing();
+    	
+    	
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+		
+    	$resultset = $repository->findBy(array('parentId'=>null));
+//     	 echo '<pre>';
+//     	 print_r($resultset);
+//     	 die;
+    	
     	return new ViewModel(array(
-    			'hello' => "hello this is demo"
+    			'hello' => "hello this is demo",
+    			'category' => $resultset
     	));
     	
     }

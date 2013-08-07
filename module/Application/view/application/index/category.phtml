@@ -3,17 +3,17 @@
 <div class="widget">
 							<h1>Category <?php echo $this->hello;?></h1>
 							<ul>
-                            	<li><a href="#">Automotive</a></li>
-                                <li><a href="#">Financial Services</a></li>
-                                <li><a href="#">Government</a></li>
-                                <li><a href="#">Health and Medicine</a></li>
-                                <li><a href="#">Internet</a></li>
-                                <li><a href="#">Media</a></li>
-                                <li><a href="#">Phone Companies</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Shopping</a></li>
-                                <li><a href="#">Travel</a></li>
-                                <li><a href="#">Utilities</a></li>
+							<?php 
+							
+							foreach ($category as $key => $cat)
+							{
+							
+							?>
+                            	<li><a href="#"><?php echo $cat->getName();?></a></li>
+                                
+                                <?php 
+							}
+                                ?>
                             </ul>
 							<div class="cl">&nbsp;</div>
 						</div>
