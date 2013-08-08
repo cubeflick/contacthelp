@@ -56,6 +56,33 @@ return array(
         			),
         	),
         	
+        	'subcategory' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/subcategory',
+        					 
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'subcategory',
+        							 
+        					),
+        			),
+        	),
+        	
+        	'companylist' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/company_list',
+        	
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'companylist',
+        	
+        					),
+        			),
+        	),
+        	 
+        	
         	
         	'application' => array(
                 'type'    => 'Literal',

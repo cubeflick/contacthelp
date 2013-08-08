@@ -76,6 +76,58 @@ class IndexController extends AbstractActionController
     	
     }
     
+    public function subcategoryAction()
+    
+    {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+    	$em = $this->getEntityManager();
+    	 
+    	$form = new Listing();
+    	 
+    	 
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    
+    	$resultset = $repository->findBy(array('parentId'=>1));
+    	//     	 echo '<pre>';
+    	//     	 print_r($resultset);
+    	//     	 die;
+    	 
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo",
+    			'subcategory' => $resultset
+    	));
+    	 
+    }
+    
+    public function companylistAction()
+    
+    {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+    	$em = $this->getEntityManager();
+    
+    	$form = new Listing();
+    
+    
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    
+    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
+    	//     	 echo '<pre>';
+    	//     	 print_r($resultset);
+    	//     	 die;
+    
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo",
+    			'company' => $resultset
+    	));
+    
+    }
+    
+    
+    
     public function managelistingAction()
     
     {
