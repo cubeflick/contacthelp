@@ -1,0 +1,21 @@
+<div>
+
+<div class="widget">
+							<h1>Category <?php echo $this->hello;?></h1>
+							<ul>
+							<?php 
+							
+							foreach ($company as $key => $cat)
+							{
+							
+							?>
+                            	<li><a href="#"><?php echo $cat->getListingName();?></a></li>
+                                
+                                <?php 
+							}
+                                ?>
+                            </ul>
+							<div class="cl">&nbsp;</div>
+						</div>
+						
+</div>
