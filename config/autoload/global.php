@@ -11,12 +11,40 @@ return array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter'
                     => 'Zend\Db\Adapter\AdapterServiceFactory',
+        	'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+        	'secondary' => 'Application\Navigation\Service\SecondaryNavigationFactory'	
         ),
     		
     ),
-	'factories' => array(
-			'Navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+	'navigation' => array(
+			'default' => array(
+					array(
+							'label' => 'Home',
+							'route' => 'home',
+					),
+					array(
+							'label' => 'About Us',
+							'route' => 'about',
+					),
+					array(
+							'label' => 'News',
+							'route' => 'home'
+					),
+					array(
+							'label' => 'Add',
+							'route' => 'addlisting'
+					),
+					array(
+							'label' => 'Contact Us',
+							'route' => 'home'
+					)
+			),
+			'secondary' => array(
+					array(
+							'label' => 'Home',
+							'route' => 'home',
+					)
+			)
 	)
-		
-		
+
 );

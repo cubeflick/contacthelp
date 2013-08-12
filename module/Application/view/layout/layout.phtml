@@ -36,16 +36,14 @@
 		<!-- navigation -->
 		<nav id="navigation">
 			<div class="shell">
-				<ul>
-					<li class="active" style="border:none;"><a href="#"><span></span>Home</a></li>
-					<li><a href="#"><span class="bottom-arr"></span>About Us</a></li>
-					<li><a href="#"><span class="bottom-arr"></span>News</a></li>
-					<li><a href="<?php echo $this->url('addlisting', array('action' => 'listing')); ?>"><span class="bottom-arr"></span>Add</a></li>
-					<li><a href="#"><span class="bottom-arr"></span>Videos</a></li>
-					<li><a href="#"><span class="bottom-arr"></span>Contact Us</a></li>                                                                                                                                                                
-				</ul>
+				<?php 
+				
+				//echo "<pre>";
+				//print_r($this->navigation('Navigation'));
+				echo $this->navigation('navigation')->menu(); ?>
 			</div>	
 		</nav>
+
 		<!-- end of navigation -->
 		<!-- slider-holder -->
 		<div class="slider-holder">
@@ -107,6 +105,17 @@
 				<section>
 					<!-- content -->
 					<div class="content1">
+					<div class="breadcrumb">
+					<?php 
+						echo $this->navigation('navigation')
+						->breadcrumbs()->
+						setMinDepth(0)
+						->setLinkLast(false)
+						->setSeparator(' : ');
+					?>
+					</div>
+					
+					
 					<?php echo $this->layout()->content ?>
 						
                         </div>

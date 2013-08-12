@@ -9,10 +9,36 @@ class Module
 {
     public function onBootstrap($e)
     {
+    	
         $e->getApplication()->getServiceManager()->get('translator');
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+        
+        $pages = array('navigation'=>
+        		array(
+        				'label'  => 'Save',
+        				'action' => 'save',
+        		),
+        		array(
+        				'label' =>  'Delete',
+        				'action' => 'delete',
+        		)
+        );
+        
+//         // create container
+//         $container = new \Zend\Navigation\Navigation();
+        
+//         $container->addPages($pages);
+        
+//         echo "<pre>";
+//         print_r($container);
+//         $navigation = $e->getApplication()->getServiceManager()->get('navigation');
+//         $navigation->addPages($pages);
+//         echo "<pre>";
+//         print_r($navigation);
+        
+        
     }
 
     public function getConfig()
