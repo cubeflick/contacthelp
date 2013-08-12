@@ -348,6 +348,17 @@ class CompanyListing {
 	{
 		return $this->_userEmail;
 	}
+	
+	/**
+	 * Returns the Identifier
+	 *
+	 * @access public
+	 * @return int
+	 */
+	public function getStatus()
+	{
+		return $this->_status;
+	}
 
 	//     /**
 	//      * @ORM\OneToMany(targetEntity="Category", mappedBy="parent")

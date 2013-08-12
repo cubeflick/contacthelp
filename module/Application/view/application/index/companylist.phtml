@@ -5,11 +5,11 @@
 							<ul>
 							<?php 
 							
-							foreach ($category as $key => $cat)
+							foreach ($company as $key => $cat)
 							{
 							
 							?>
-                            	<li><a href="<?php echo $this->url('subcategory', array('action' => 'subcategory')); ?>"><?php echo $cat->getName();?></a></li>
+                            	<li><a href="#"><?php echo $cat->getListingName();?></a></li>
                                 
                                 <?php 
 							}

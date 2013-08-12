@@ -41,6 +41,49 @@ return array(
         			),
         		),
         	),
+        	
+        	
+        	'manage_listing' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/manage',
+        					
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'manage',
+        							
+        					),
+        			),
+        	),
+        	
+        	'subcategory' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/subcategory',
+        					 
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'subcategory',
+        							 
+        					),
+        			),
+        	),
+        	
+        	'companylist' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/company_list',
+        	
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'companylist',
+        	
+        					),
+        			),
+        	),
+        	 
+        	
+        	
         	'application' => array(
                 'type'    => 'Literal',
                 'options' => array(

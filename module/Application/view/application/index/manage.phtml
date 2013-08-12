@@ -1,0 +1,90 @@
+
+<div id="page-heading">
+		<h1>Manage Listing</h1>
+	</div>
+
+<div id="table-content">
+
+ <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
+		<tbody>
+		<?php 
+			
+				if(count($record) > 0)
+				{
+				
+				?>
+				<tr>
+				<td>Listing Id</td>
+				<td><?php echo $record->getListingId();?></td>
+				</tr>
+				<tr>
+				<td>Listing Name</td>
+				<td><?php echo $record->getListingName();?></td>
+				</tr>
+				<tr>
+				<td>Subcategory One</td>
+				<td><?php echo $record->getSubCategoryOne();?></td>
+				</tr>
+				<tr>
+				<td>Subcategory Two</td>
+				<td><?php echo $record->getSubCategoryTwo();?></td>
+				</tr>
+				<tr>
+				<td>Subcategory Three</td>
+				<td><?php echo $record->getSubCategoryThree();?></td>
+				</tr>
+				<tr>
+				<td>Company URL</td>
+				<td><?php echo $record->getCompanyUrl();?></td>
+				</tr>
+				<tr>
+				<td>Department</td>
+				<td><?php echo $record->getDepartment();?></td>
+				</tr>
+				<tr>
+				<td>Phone Number</td>
+				<td><?php echo $record->getPhoneNumber();?></td>
+				</tr>
+				<tr>
+				<td>Step To Reach</td>
+				<td><?php echo $record->getStepToReach();?></td>
+				</tr>
+				<tr>
+				<td>Customer Service Link</td>
+				<td><?php echo $record->getCustomerServiceLink();?></td>
+				</tr>
+				<tr>
+				<td>Customer Support Email</td>
+				<td><?php echo $record->getCustomerSupportEmail();?></td>
+				</tr>
+				<tr>
+				<td>Operation Hours</td>
+				<td><?php echo $record->getOperationHours();?></td>
+				</tr>
+				<tr>
+				<td>Description</td>
+				<td><?php echo $record->getDescription();?></td>
+				</tr>
+				<tr>
+				<td>Additional Note</td>
+				<td><?php echo $record->getAdditionalNote();?></td>
+				</tr>
+				<tr>
+				<td>User Name</td>
+				<td><?php echo $record->getUserName();?></td>
+				</tr>
+				<tr>
+				<td>User Email</td>
+				<td><?php echo $record->getUserEmail();?></td>
+				</tr>
+				<tr>
+				<td>Status</td>
+				<td><?php echo $record->getStatus();?></td>
+				</tr>
+				<?php 
+				}
+				
+				?>
+		</tbody>
+ </table>
+</div>

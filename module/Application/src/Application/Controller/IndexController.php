@@ -40,7 +40,9 @@ class IndexController extends AbstractActionController
 	
     public function indexAction()
     {
+    	$this->categoryAction();
         return new ViewModel();
+        
     }
     
     public function aboutAction()
@@ -52,11 +54,79 @@ class IndexController extends AbstractActionController
     public function categoryAction()
     
     {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+        $em = $this->getEntityManager();
+    	
+    	$form = new Listing();
+    	
+    	
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+		
+    	$resultset = $repository->findBy(array('parentId'=>null));
+//     	 echo '<pre>';
+//     	 print_r($resultset);
+//     	 die;
+    	
     	return new ViewModel(array(
-    			'hello' => "hello this is demo"
+    			'hello' => "hello this is demo",
+    			'category' => $resultset
     	));
     	
     }
+    
+    public function subcategoryAction()
+    
+    {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+    	$em = $this->getEntityManager();
+    	 
+    	$form = new Listing();
+    	 
+    	 
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    
+    	$resultset = $repository->findBy(array('parentId'=>1));
+    	//     	 echo '<pre>';
+    	//     	 print_r($resultset);
+    	//     	 die;
+    	 
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo",
+    			'subcategory' => $resultset
+    	));
+    	 
+    }
+    
+    public function companylistAction()
+    
+    {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+    	$em = $this->getEntityManager();
+    
+    	$form = new Listing();
+    
+    
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    
+    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
+    	//     	 echo '<pre>';
+    	//     	 print_r($resultset);
+    	//     	 die;
+    
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo",
+    			'company' => $resultset
+    	));
+    
+    }
+    
+    
     
     public function managelistingAction()
     
@@ -90,6 +160,7 @@ class IndexController extends AbstractActionController
 			$paginator->setCurrentPageNumber($this->params('page',1))
 			->setItemCountPerPage(10);
 			
+			
 			return new ViewModel(array(
 					'messages' => $messages,
 					'paginator' => $paginator
@@ -99,9 +170,46 @@ class IndexController extends AbstractActionController
 		else
 		{
 			return $this->redirect()->toRoute('login');
+			
 		}
     	
     	
+    }
+    
+    
+    public function manageAction()
+    
+    {
+    	$this->layout('layout/layout_admin');
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
+		$em = $this->getEntityManager();
+		if($authService->hasIdentity())
+		{
+			
+			$loggedInUser = $authService->getIdentity();
+			$this->layout()->loggedInUser = $loggedInUser;
+				
+			$messages = $this->flashMessenger()->getMessages();
+				
+			$resultset = $repository->findBy(array('_id'=> 6));
+			$record = $resultset[0];
+// 									echo "<pre>";
+// 									print_r($resultset);
+// 									echo $record->getListingId();
+// 									die;
+
+			return array('record' => $record);
+					
+			
+		}
+		else
+		{
+			return $this->redirect()->toRoute('login');
+				
+		}
+		
+		
     }
     
     
