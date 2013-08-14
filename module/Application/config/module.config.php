@@ -41,8 +41,20 @@ return array(
         			),
         		),
         	),
+        	'frontcategorylisting' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/',
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'category',
+        					),
+        			),
+        	),
         	
         	
+        	
+        	 
         	'manage_listing' => array(
         			'type' => 'Zend\Mvc\Router\Http\Literal',
         			'options' => array(
@@ -56,11 +68,24 @@ return array(
         			),
         	),
         	
-        	'subcategory' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        	
+        	'companylist' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
         			'options' => array(
-        					'route'    => '/subcategory',
+        					'route'    => '/directory[/:catname][/:subcatname]',
         					 
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'companylist',
+        							 
+        					),
+        			),
+        	),
+        	
+        	'subcategory' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/directory[/:catname]',
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',
         							'action'     => 'subcategory',
@@ -69,18 +94,7 @@ return array(
         			),
         	),
         	
-        	'companylist' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Literal',
-        			'options' => array(
-        					'route'    => '/company_list',
         	
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'companylist',
-        	
-        					),
-        			),
-        	),
         	 
         	
         	

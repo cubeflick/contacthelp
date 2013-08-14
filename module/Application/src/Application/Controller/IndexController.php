@@ -54,6 +54,14 @@ class IndexController extends AbstractActionController
     public function categoryAction()
     
     {
+    	
+//     	//echo "<pre>";
+//     	//print_r($this->params());
+//     	$catname = $this->params('catname', null);
+//     	echo $catname;
+//     	echo "Inside cat";
+//     	die;
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
         $em = $this->getEntityManager();
@@ -79,17 +87,30 @@ class IndexController extends AbstractActionController
     public function subcategoryAction()
     
     {
+    	    	$catname = $this->params('catname', null);
+//     	    	echo $catname;
+//     	    	die;
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
     	$em = $this->getEntityManager();
     	 
     	$form = new Listing();
-    	 
-    	 
+    	$query = $em->createQuery("select cat.id from Category\Entity\Category cat where cat.cname = '$catname' ");
+			$subcats = $query->getResult();
+// 			echo '<pre>';
+//     		echo $subcats[0]['id'];
+//     		die;
+
+			$subcat = $subcats[0];
+			$id = $subcat['id'];
+// 			echo $id;
+// 			die;
+			
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     
-    	$resultset = $repository->findBy(array('parentId'=>1));
+    	$resultset = $repository->findBy(array('parentId'=> $id));
     	//     	 echo '<pre>';
     	//     	 print_r($resultset);
     	//     	 die;
@@ -124,6 +145,30 @@ class IndexController extends AbstractActionController
     			'company' => $resultset
     	));
     
+    }
+    
+    public function companyrecordAction()
+    
+    {
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+    	$em = $this->getEntityManager();
+    	
+    	$form = new Listing();
+    	
+    	
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    	
+    	$resultset = $repository->findBy(array('_listingName'=>'mithun'));
+    	    	 echo '<pre>';
+    	    	 print_r($resultset);
+    	    	 die;
+    	
+    	return new ViewModel(array(
+    			'hello' => "hello this is demo",
+    			'company' => $resultset
+    	));
     }
     
     
