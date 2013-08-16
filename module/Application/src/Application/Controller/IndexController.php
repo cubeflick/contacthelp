@@ -40,7 +40,8 @@ class IndexController extends AbstractActionController
 	
     public function indexAction()
     {
-    	$this->categoryAction();
+    	
+//     	$this->categoryAction();
         return new ViewModel();
         
     }
@@ -87,6 +88,7 @@ class IndexController extends AbstractActionController
     public function subcategoryAction()
     
     {
+    	$this->categoryAction();
     	    	$catname = $this->params('catname', null);
 //     	    	echo $catname;
 //     	    	die;
@@ -116,7 +118,7 @@ class IndexController extends AbstractActionController
     	//     	 die;
     	 
     	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    			'category' => $catname,
     			'subcategory' => $resultset
     	));
     	 
@@ -125,23 +127,31 @@ class IndexController extends AbstractActionController
     public function companylistAction()
     
     {
+    	$catname = $this->params('catname', null);
+    	$subcatname = $this->params('subcatname', null);
+//     	echo $catname;
+//     	echo $subcatname;
+//     	die;
+    	
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
     	$em = $this->getEntityManager();
     
     	$form = new Listing();
     
-    
+    	
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     
-    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
+    	$resultset = $repository->findBy(array('_subCategoryTwo'=>$subcatname));
     	//     	 echo '<pre>';
     	//     	 print_r($resultset);
     	//     	 die;
     
-    	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    return new ViewModel(array(
+    			'category' => $catname,
+    			'subcategory' => $subcatname,
     			'company' => $resultset
     	));
     
@@ -150,6 +160,13 @@ class IndexController extends AbstractActionController
     public function companyrecordAction()
     
     {
+    	$catname = $this->params('catname', null);
+    	$subcatname = $this->params('subcatname', null);
+    	$listingname = $this->params('listingname', null);
+//     	    	echo $catname;
+//     	    	echo $subcatname;
+//     	    	echo $listingname;
+//     	    	die;
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
     	$em = $this->getEntityManager();
@@ -160,14 +177,14 @@ class IndexController extends AbstractActionController
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     	
-    	$resultset = $repository->findBy(array('_listingName'=>'mithun'));
-    	    	 echo '<pre>';
-    	    	 print_r($resultset);
-    	    	 die;
+    	$resultset = $repository->findBy(array('_listingName'=>$listingname));
+//     	    	 echo '<pre>';
+//     	    	 print_r($resultset);
+//  				 die;
     	
     	return new ViewModel(array(
-    			'hello' => "hello this is demo",
-    			'company' => $resultset
+    			
+    			'result' => $resultset
     	));
     }
     

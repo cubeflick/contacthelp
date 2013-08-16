@@ -41,16 +41,16 @@ return array(
         			),
         		),
         	),
-        	'frontcategorylisting' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Segment',
-        			'options' => array(
-        					'route'    => '/',
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'category',
-        					),
-        			),
-        	),
+//         	'frontcategorylisting' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//         			'options' => array(
+//         					'route'    => '/',
+//         					'defaults' => array(
+//         							'controller' => 'Application\Controller\Index',
+//         							'action'     => 'category',
+//         					),
+//         			),
+//         	),
         	
         	
         	
@@ -69,6 +69,22 @@ return array(
         	),
         	
         	
+        
+        	
+        	'listing_record' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/directory[/:catname][/:subcatname][/:listingname]',
+        	
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'companyrecord',
+        	
+        					),
+        			),
+        	),
+        	 
+
         	'companylist' => array(
         			'type' => 'Zend\Mvc\Router\Http\Segment',
         			'options' => array(
@@ -81,7 +97,8 @@ return array(
         					),
         			),
         	),
-        	
+
+
         	'subcategory' => array(
         			'type' => 'Zend\Mvc\Router\Http\Segment',
         			'options' => array(
@@ -89,12 +106,10 @@ return array(
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',
         							'action'     => 'subcategory',
-        							 
+        	
         					),
         			),
         	),
-        	
-        	
         	 
         	
         	

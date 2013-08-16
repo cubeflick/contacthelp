@@ -1,7 +1,7 @@
 <div>
 
 <div class="widget">
-							<h1>Category <?php echo $this->hello;?></h1>
+							<h1><?php echo $category;?></h1>
 							<ul>
 							<?php 
 							
@@ -9,7 +9,7 @@
 							{
 							
 							?>
-                            	<li><a href="<?php echo $this->url('companylist', array('action' => 'companylist')); ?>/<?php echo $cat->getName();?>"><?php echo $cat->getName();?></a></li>
+                            	<li><a href="<?php echo $this->url('companylist', array('action' => 'companylist')); ?>/<?php echo $category;?>/<?php echo $cat->getName();?>"><?php echo $cat->getName();?></a></li>
                                 
                                 <?php 
 							}

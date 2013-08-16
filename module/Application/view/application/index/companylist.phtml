@@ -9,7 +9,7 @@
 							{
 							
 							?>
-                            	<li><a href="#"><?php echo $cat->getListingName();?></a></li>
+                            	<li><a href="<?php echo $this->url('companylist', array('action' => 'companylist')); ?>/<?php echo $category;?>/<?php echo $subcategory;?>/<?php echo $cat->getListingName();?>"><?php echo $cat->getListingName();?></a></li>
                                 
                                 <?php 
 							}
