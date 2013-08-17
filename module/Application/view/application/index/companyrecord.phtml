@@ -1,4 +1,5 @@
 <div>
+<h1><?php echo $result[0]->getListingName();?></h1>
 <TABLE CELLSPACING="0" CELLPADDING="0" STYLE="width:100%;" ID="listingResultsTable">
 
 
@@ -32,8 +33,9 @@
 
                         <P>
                         <DIV CLASS="label">Email:</DIV>
-                                                <DIV CLASS="normalResult"><?php echo $value-> getUserEmail();?></DIV>
-                                                                        
+                        <DIV CLASS="normalResult"><?php echo $value-> getCustomerSupportEmail();?></DIV>
+
+                                                
                         <P>
                         <DIV CLASS="label">Customer service link:</DIV>
                                                 <DIV ><A HREF="<?php echo $value->getCustomerServiceLink();?>" target="_blank">Click Here</A></DIV>
@@ -41,17 +43,12 @@
                         <P>
                         <DIV CLASS="label">Description:</DIV>
                         <DIV CLASS="normalResult"><?php echo $value->getDescription();?></DIV>
-
-                        <!--
-                        <P>
-                        <DIV STYLE="text-align:center;margin:7px 0 7px 0;"><script type="text/javascript" src="http://cdn.socialtwist.com/2009032513495/script.js"></script><a class="st-taf" href="http://tellafriend.socialtwist.com:80" onclick="return false;" style="border:0;padding:0;margin:0;"><img alt="SocialTwist Tell-a-Friend" style="border:0;padding:0;margin:0;" src="http://images.socialtwist.com/2009032513495/button.png"onmouseout="hideHoverMap(this)" onmouseover="showHoverMap(this, '2009032513495', window.location, document.title)" onclick="cw(this, {id:'2009032513495', link: window.location, title: document.title });"/></a></DIV>
-                        -->
-
-                                                
+              
                         </TD>
                     </TR>
                     <?php 
 				}
                     ?>
                 </TABLE>
+                
 </div>

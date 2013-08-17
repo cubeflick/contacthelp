@@ -79,7 +79,7 @@ class IndexController extends AbstractActionController
 //     	 die;
     	
     	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    			
     			'category' => $resultset
     	));
     	
