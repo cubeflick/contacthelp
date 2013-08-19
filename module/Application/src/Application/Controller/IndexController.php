@@ -40,7 +40,8 @@ class IndexController extends AbstractActionController
 	
     public function indexAction()
     {
-    	$this->categoryAction();
+    	
+//     	$this->categoryAction();
         return new ViewModel();
         
     }
@@ -54,6 +55,14 @@ class IndexController extends AbstractActionController
     public function categoryAction()
     
     {
+    	
+//     	//echo "<pre>";
+//     	//print_r($this->params());
+//     	$catname = $this->params('catname', null);
+//     	echo $catname;
+//     	echo "Inside cat";
+//     	die;
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
         $em = $this->getEntityManager();
@@ -70,7 +79,7 @@ class IndexController extends AbstractActionController
 //     	 die;
     	
     	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    			
     			'category' => $resultset
     	));
     	
@@ -79,23 +88,37 @@ class IndexController extends AbstractActionController
     public function subcategoryAction()
     
     {
+    	$this->categoryAction();
+    	    	$catname = $this->params('catname', null);
+//     	    	echo $catname;
+//     	    	die;
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
     	$em = $this->getEntityManager();
     	 
     	$form = new Listing();
-    	 
-    	 
+    	$query = $em->createQuery("select cat.id from Category\Entity\Category cat where cat.cname = '$catname' ");
+			$subcats = $query->getResult();
+// 			echo '<pre>';
+//     		echo $subcats[0]['id'];
+//     		die;
+
+			$subcat = $subcats[0];
+			$id = $subcat['id'];
+// 			echo $id;
+// 			die;
+			
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     
-    	$resultset = $repository->findBy(array('parentId'=>1));
+    	$resultset = $repository->findBy(array('parentId'=> $id));
     	//     	 echo '<pre>';
     	//     	 print_r($resultset);
     	//     	 die;
     	 
     	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    			'category' => $catname,
     			'subcategory' => $resultset
     	));
     	 
@@ -104,26 +127,65 @@ class IndexController extends AbstractActionController
     public function companylistAction()
     
     {
+    	$catname = $this->params('catname', null);
+    	$subcatname = $this->params('subcatname', null);
+//     	echo $catname;
+//     	echo $subcatname;
+//     	die;
+    	
+    	
     	$request = $this->getRequest();
     	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
     	$em = $this->getEntityManager();
     
     	$form = new Listing();
     
-    
+    	
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     
-    	$resultset = $repository->findBy(array('_subCategoryOne'=>'first'));
+    	$resultset = $repository->findBy(array('_subCategoryTwo'=>$subcatname));
     	//     	 echo '<pre>';
     	//     	 print_r($resultset);
     	//     	 die;
     
-    	return new ViewModel(array(
-    			'hello' => "hello this is demo",
+    return new ViewModel(array(
+    			'category' => $catname,
+    			'subcategory' => $subcatname,
     			'company' => $resultset
     	));
     
+    }
+    
+    public function companyrecordAction()
+    
+    {
+    	$catname = $this->params('catname', null);
+    	$subcatname = $this->params('subcatname', null);
+    	$listingname = $this->params('listingname', null);
+//     	    	echo $catname;
+//     	    	echo $subcatname;
+//     	    	echo $listingname;
+//     	    	die;
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
+    	$em = $this->getEntityManager();
+    	
+    	$form = new Listing();
+    	
+    	
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    	
+    	$resultset = $repository->findBy(array('_listingName'=>$listingname));
+//     	    	 echo '<pre>';
+//     	    	 print_r($resultset);
+//  				 die;
+    	
+    	return new ViewModel(array(
+    			
+    			'result' => $resultset
+    	));
     }
     
     

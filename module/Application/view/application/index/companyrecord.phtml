@@ -1,0 +1,54 @@
+<div>
+<h1><?php echo $result[0]->getListingName();?></h1>
+<TABLE CELLSPACING="0" CELLPADDING="0" STYLE="width:100%;" ID="listingResultsTable">
+
+
+				<?php 
+				foreach ($result as $key=>$value)
+				{
+				
+				?>
+     
+                    <TR>
+                        <TD CLASS="department">
+                        <H2 STYLE="text-transform:capitalize;"><?php echo $value->getDepartment();?></H2>
+                        <DIV STYLE="text-align:left;">
+                  
+                        </DIV>
+                        
+                        </TD>
+
+                        <TD CLASS="details">
+
+                        <DIV CLASS="label">Phone:</DIV>
+                        <DIV CLASS="emphasisResult"><?php echo $value->getPhoneNumber();?></DIV>
+
+                        <P>
+                        <DIV CLASS="label">How to reach a live person:</DIV>
+                        <DIV CLASS="normalResult"><?php echo $value->getStepToReach();?></DIV>
+
+                        <P>
+                        <DIV CLASS="label">Hours of Operation:</DIV>
+                        <DIV CLASS="normalResult"><?php echo $value->getOperationHours();?></DIV>
+
+                        <P>
+                        <DIV CLASS="label">Email:</DIV>
+                        <DIV CLASS="normalResult"><?php echo $value-> getCustomerSupportEmail();?></DIV>
+
+                                                
+                        <P>
+                        <DIV CLASS="label">Customer service link:</DIV>
+                                                <DIV ><A HREF="<?php echo $value->getCustomerServiceLink();?>" target="_blank">Click Here</A></DIV>
+                                                
+                        <P>
+                        <DIV CLASS="label">Description:</DIV>
+                        <DIV CLASS="normalResult"><?php echo $value->getDescription();?></DIV>
+              
+                        </TD>
+                    </TR>
+                    <?php 
+				}
+                    ?>
+                </TABLE>
+                
+</div>

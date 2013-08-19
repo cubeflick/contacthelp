@@ -41,8 +41,20 @@ return array(
         			),
         		),
         	),
+//         	'frontcategorylisting' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//         			'options' => array(
+//         					'route'    => '/',
+//         					'defaults' => array(
+//         							'controller' => 'Application\Controller\Index',
+//         							'action'     => 'category',
+//         					),
+//         			),
+//         	),
         	
         	
+        	
+        	 
         	'manage_listing' => array(
         			'type' => 'Zend\Mvc\Router\Http\Literal',
         			'options' => array(
@@ -56,27 +68,44 @@ return array(
         			),
         	),
         	
-        	'subcategory' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        	
+        
+        	
+        	'listing_record' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
         			'options' => array(
-        					'route'    => '/subcategory',
+        					'route'    => '/directory[/:catname][/:subcatname][/:listingname]',
+        	
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'companyrecord',
+        	
+        					),
+        			),
+        	),
+        	 
+
+        	'companylist' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/directory[/:catname][/:subcatname]',
         					 
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',
-        							'action'     => 'subcategory',
+        							'action'     => 'companylist',
         							 
         					),
         			),
         	),
-        	
-        	'companylist' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Literal',
+
+
+        	'subcategory' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
         			'options' => array(
-        					'route'    => '/company_list',
-        	
+        					'route'    => '/directory[/:catname]',
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',
-        							'action'     => 'companylist',
+        							'action'     => 'subcategory',
         	
         					),
         			),
