@@ -139,19 +139,32 @@ class IndexController extends AbstractActionController
     	$em = $this->getEntityManager();
     
     	$form = new Listing();
+    	$query = $em->createQuery("select list,list._id,list._listingName,list._subCategoryOne,list._subCategoryTwo,list._subCategoryThree,
+					list._companyUrl,list._department,list._phoneNumber,list._stepToReach,list._customerServiceLink,
+					list._customerSupportEmail,list._operationHours,list._description,list._additionalNote,list._userName,
+					list._userEmail,list._status from Application\Entity\CompanyListing list where list._subCategoryOne = '$subcatname'
+    			or list._subCategoryTwo = '$subcatname' or list._subCategoryThree = '$subcatname' ");
+    	$records = $query->getResult();
     
-    	
+//     	foreach($records as $result)
+//     	{
+//     	                echo '<pre>';
+//     					print_r($result);
+//     					echo $result['_id'];
+//     	}
+//     					die;
     	$listing = new CompanyListing();
     	$listing->populate($request->getPost());
     
     	$resultset = $repository->findBy(array('_subCategoryTwo'=>$subcatname));
-    	//     	 echo '<pre>';
-    	//     	 print_r($resultset);
-    	//     	 die;
+//     	    	 echo '<pre>';
+//     	    	 print_r($resultset);
+//     	    	 die;
     
     return new ViewModel(array(
     			'category' => $catname,
     			'subcategory' => $subcatname,
+    		'records' => $records,
     			'company' => $resultset
     	));
     
