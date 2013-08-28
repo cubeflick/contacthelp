@@ -326,27 +326,34 @@ class IndexController extends AbstractActionController
     	 
     	$entity = $em->find('Category\Entity\Category', $id);
     	 
-    	$form = new CategoryForm();
+    	$form = new SubCategoryForm();
     	$form->bind($entity);
     
     	if($request->isPost())
     	{
-    		$formValidator = new CategoryFormValidator();
-    		$form->setInputFilter($formValidator->getInputFilter());
+    		
     		$form->setData($request->getPost());
     
-    		if($form->isValid()){
-    			{
+    		
     				$em->persist($entity);
     				$em->flush();
-    				$this->flashMessenger()->addMessage('Category updated successfully','success');
-    				return $this->redirect()->toRoute('managecategory');
-    			}
-    		}
+    				$this->flashMessenger()->addMessage('SubCategory updated successfully','success');
+    				return $this->redirect()->toRoute('managesubcategory');
+    		
     		 
     	}
+    	
+    	
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+    	$em = $this->getEntityManager();
+    	$resultset = $repository->findBy(array('parentId'=>null));
+//     	echo '<echo>';
+//     	print_r($resultset);
+//     	die;
+    	
+    	
     	 
-    	return array('form' => $form);
+    	return array('form' => $form, 'category' => $resultset);
     
     }
     

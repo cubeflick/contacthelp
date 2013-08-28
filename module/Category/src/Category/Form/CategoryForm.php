@@ -26,7 +26,8 @@ class CategoryForm extends Form
                 'label' => 'Name', 
             ), 
         )); 
-
+        
+       
         $this->add(array(
         		'name' => 'description',
         		'type' => 'Zend\Form\Element\Textarea',

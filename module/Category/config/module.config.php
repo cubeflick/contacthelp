@@ -75,7 +75,7 @@ return array(
 							),
 					),
 					'editsubcategory' => array(
-							'type' => 'Zend\Mvc\Router\Http\Literal',
+							'type' => 'Zend\Mvc\Router\Http\segment',
 							'options' => array(
 									'route'    => '/subcategory/edit/[/:id]',
 									'defaults' => array(

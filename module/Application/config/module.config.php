@@ -54,11 +54,24 @@ return array(
         	
         	
         	
-        	 
         	'manage_listing' => array(
         			'type' => 'Zend\Mvc\Router\Http\Literal',
         			'options' => array(
-        					'route'    => '/manage',
+        					'route'    => '/listing/manage',
+        					 
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'managelisting',
+        							 
+        					),
+        			),
+        	),
+        	
+        	 
+        	'approve_listing' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/approve[/:id]',
         					
         					'defaults' => array(
         							'controller' => 'Application\Controller\Index',

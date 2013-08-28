@@ -31,7 +31,7 @@ class SubCategoryForm extends Form
         		'name' => 'parent_id',
         		'type' => 'Zend\Form\Element\Select',
         		'attributes' => array(
-        				'placeholder' => 'Name',
+        				'class' => 'inp-form',
         				'required' => 'required',
         		),
         		'options' => array(
