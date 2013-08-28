@@ -57,5 +57,24 @@ class Module
         );
     }
     
+    public function getViewHelperConfig()   {
+//     	return array(
+//     			'invokables' => array(
+//     					'listCategories' => 'Application\View\Helper\Category',
+//     			)
+//     	);
+    	
+    	return array('factories' => array(
+    			'listCategories' => function ($helpers) {
+    				$services = $helpers->getServiceLocator();
+    				//$someService == here goes entity Manager
+    				$helper = new \Application\View\Helper\Category();
+    				$helper->setServiceLocator($services);
+    				return $helper;
+    			},
+    	));
+    	
+    }
+    
 
 }

@@ -9,138 +9,138 @@ namespace Application;
  */
 
 return array(
-    'router' => array(
-        'routes' => array(
-            'home' => array(
-                'type' => 'Zend\Mvc\Router\Http\Literal',
-                'options' => array(
-                    'route'    => '/',
-                    'defaults' => array(
-                        'controller' => 'Application\Controller\Index',
-                        'action'     => 'index',
-                    ),
-                ),
-            ),
-        	'about' => array(
-        		'type' => 'Zend\Mvc\Router\Http\Literal',
-        		'options' => array(
-        			'route'    => '/about',
-        			'defaults' => array(
-        				'controller' => 'Application\Controller\Index',
-        				'action'     => 'about',
-        			),
-        		),
-        	),
-        	'addlisting' => array(
-        		'type' => 'Zend\Mvc\Router\Http\Literal',
-        		'options' => array(
-        			'route'    => '/listing/add',
-        			'defaults' => array(
-        				'controller' => 'Application\Controller\Index',
-        				'action'     => 'listing',
-        			),
-        		),
-        	),
-//         	'frontcategorylisting' => array(
-//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//     'router' => array(
+//         'routes' => array(
+//             'home' => array(
+//                 'type' => 'Zend\Mvc\Router\Http\Literal',
+//                 'options' => array(
+//                     'route'    => '/',
+//                     'defaults' => array(
+//                         'controller' => 'Application\Controller\Index',
+//                         'action'     => 'index',
+//                     ),
+//                 ),
+//             ),
+//         	'about' => array(
+//         		'type' => 'Zend\Mvc\Router\Http\Literal',
+//         		'options' => array(
+//         			'route'    => '/about',
+//         			'defaults' => array(
+//         				'controller' => 'Application\Controller\Index',
+//         				'action'     => 'about',
+//         			),
+//         		),
+//         	),
+//         	'addlisting' => array(
+//         		'type' => 'Zend\Mvc\Router\Http\Literal',
+//         		'options' => array(
+//         			'route'    => '/listing/add',
+//         			'defaults' => array(
+//         				'controller' => 'Application\Controller\Index',
+//         				'action'     => 'listing',
+//         			),
+//         		),
+//         	),
+// //         	'frontcategorylisting' => array(
+// //         			'type' => 'Zend\Mvc\Router\Http\Segment',
+// //         			'options' => array(
+// //         					'route'    => '/',
+// //         					'defaults' => array(
+// //         							'controller' => 'Application\Controller\Index',
+// //         							'action'     => 'category',
+// //         					),
+// //         			),
+// //         	),
+        	
+        	
+        	
+        	 
+//         	'manage_listing' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Literal',
 //         			'options' => array(
-//         					'route'    => '/',
+//         					'route'    => '/manage',
+        					
 //         					'defaults' => array(
 //         							'controller' => 'Application\Controller\Index',
-//         							'action'     => 'category',
+//         							'action'     => 'manage',
+        							
 //         					),
 //         			),
 //         	),
         	
         	
-        	
-        	 
-        	'manage_listing' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Literal',
-        			'options' => array(
-        					'route'    => '/manage',
-        					
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'manage',
-        							
-        					),
-        			),
-        	),
-        	
-        	
         
         	
-        	'listing_record' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Segment',
-        			'options' => array(
-        					'route'    => '/directory[/:catname][/:subcatname][/:listingname]',
+//         	'listing_record' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//         			'options' => array(
+//         					'route'    => '/directory[/:catname][/:subcatname][/:listingname]',
         	
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'companyrecord',
+//         					'defaults' => array(
+//         							'controller' => 'Application\Controller\Index',
+//         							'action'     => 'companyrecord',
         	
-        					),
-        			),
-        	),
+//         					),
+//         			),
+//         	),
         	 
 
-        	'companylist' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Segment',
-        			'options' => array(
-        					'route'    => '/directory[/:catname][/:subcatname]',
+//         	'companylist' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//         			'options' => array(
+//         					'route'    => '/directory[/:catname][/:subcatname]',
         					 
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'companylist',
+//         					'defaults' => array(
+//         							'controller' => 'Application\Controller\Index',
+//         							'action'     => 'companylist',
         							 
-        					),
-        			),
-        	),
+//         					),
+//         			),
+//         	),
 
 
-        	'subcategory' => array(
-        			'type' => 'Zend\Mvc\Router\Http\Segment',
-        			'options' => array(
-        					'route'    => '/directory[/:catname]',
-        					'defaults' => array(
-        							'controller' => 'Application\Controller\Index',
-        							'action'     => 'subcategory',
+//         	'subcategory' => array(
+//         			'type' => 'Zend\Mvc\Router\Http\Segment',
+//         			'options' => array(
+//         					'route'    => '/directory[/:catname]',
+//         					'defaults' => array(
+//         							'controller' => 'Application\Controller\Index',
+//         							'action'     => 'subcategory',
         	
-        					),
-        			),
-        	),
+//         					),
+//         			),
+//         	),
         	 
         	
         	
-        	'application' => array(
-                'type'    => 'Literal',
-                'options' => array(
-                    'route'    => '/application',
-                    'defaults' => array(
-                        '__NAMESPACE__' => 'Application\Controller',
-                        'controller'    => 'Index',
-                        'action'        => 'index',
-                    ),
-                ),
-                'may_terminate' => true,
-                'child_routes' => array(
-                    'default' => array(
-                        'type'    => 'Segment',
-                        'options' => array(
-                            'route'    => '/[:controller[/:action]]',
-                            'constraints' => array(
-                                'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
-                                'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
-                            ),
-                            'defaults' => array(
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        ),
-    ),
+//         	'application' => array(
+//                 'type'    => 'Literal',
+//                 'options' => array(
+//                     'route'    => '/application',
+//                     'defaults' => array(
+//                         '__NAMESPACE__' => 'Application\Controller',
+//                         'controller'    => 'Index',
+//                         'action'        => 'index',
+//                     ),
+//                 ),
+//                 'may_terminate' => true,
+//                 'child_routes' => array(
+//                     'default' => array(
+//                         'type'    => 'Segment',
+//                         'options' => array(
+//                             'route'    => '/[:controller[/:action]]',
+//                             'constraints' => array(
+//                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+//                             ),
+//                             'defaults' => array(
+//                             ),
+//                         ),
+//                     ),
+//                 ),
+//             ),
+//         ),
+//     ),
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
