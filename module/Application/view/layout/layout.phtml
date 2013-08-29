@@ -6,9 +6,11 @@
 	<?php 
 	
         echo $this->headLink()->appendStylesheet('/css_front/style.css')
-        ->appendStylesheet('/css_front/flexslider.css');
+        	->appendStylesheet('/css_front/flexslider.css')
+        	->appendStylesheet('/jqueryui/themes/ui-lightness/jquery-ui-1.10.3.custom.min.css');
         
         echo $this->headScript()->prependFile('/js/jquery-1.7.2.min.js')
+        ->appendFile('/jqueryui/jquery-ui-1.10.3.custom.min.js')
         ->appendFile('/js/jquery.flexslider-min.js')
         ->appendFile('/js/functions.js', 'text/javascript');
 
@@ -46,52 +48,14 @@
 
 		<!-- end of navigation -->
 		<!-- slider-holder -->
-		<div class="slider-holder">
-			<div class="shell">
+		<div class="slider-holder" >
+			<div class="shell" >
 				<span class="slider-shadow"></span>
 				<div class="slider flexslider">
-					<ul class="slides">
-						<li>
-							<img src="/css_front/images/banner.png" alt="" />
-							<!--<div class="slide-cnt">
-								<h2>Innovative Design Solutions Ranging</h2>
-								<p>Lorem ipsum dolor sit amet, con-<br />sectetur adipiscing elit. Praesent non tortor quis tellus euismod sodalestis elit lorem, vehicula sit amet dictum nec, congue venenatis quam. Cras fermentum scelerisque ma .. <a href="#">Read More</a></p>
-								<a href="#" class="slider-btn">Explore Project</a>
-							</div>-->
-						</li>
-						<li>
-							<img src="/css_front/images/banner.png" alt="" />
-							<!--<div class="slide-cnt">
-								<h2>Innovative Design Solutions Ranging</h2>
-								<p>Lorem ipsum dolor sit amet, con-<br />sectetur adipiscing elit. Praesent non tortor quis tellus euismod sodalestis elit lorem, vehicula sit amet dictum nec, congue venenatis quam. Cras fermentum scelerisque ma .. <a href="#">Read More</a></p>
-								<a href="#" class="slider-btn">Explore Project</a>
-							</div>-->
-						</li>
-						<li>
-							<img src="/css_front/images/banner.png" alt="" />
-							<!--<div class="slide-cnt">
-								<h2>Innovative Design Solutions Ranging</h2>
-								<p>Lorem ipsum dolor sit amet, con-<br />sectetur adipiscing elit. Praesent non tortor quis tellus euismod sodalestis elit lorem, vehicula sit amet dictum nec, congue venenatis quam. Cras fermentum scelerisque ma .. <a href="#">Read More</a></p>
-								<a href="#" class="slider-btn">Explore Project</a>
-							</div>-->
-						</li>
-						<li>
-							<img src="/css_front/images/banner.png" alt="" />
-							<!--<div class="slide-cnt">
-								<h2>Innovative Design Solutions Ranging</h2>
-								<p>Lorem ipsum dolor sit amet, con-<br />sectetur adipiscing elit. Praesent non tortor quis tellus euismod sodalestis elit lorem, vehicula sit amet dictum nec, congue venenatis quam. Cras fermentum scelerisque ma .. <a href="#">Read More</a></p>
-								<a href="#" class="slider-btn">Explore Project</a>
-							</div>-->
-						</li>
-						<li>
-							<img src="/css_front/images/banner.png" alt="" />
-							<!--<div class="slide-cnt">
-								<h2>Innovative Design Solutions Ranging</h2>
-								<p>Lorem ipsum dolor sit amet, con-<br />sectetur adipiscing elit. Praesent non tortor quis tellus euismod sodalestis elit lorem, vehicula sit amet dictum nec, congue venenatis quam. Cras fermentum scelerisque ma .. <a href="#">Read More</a></p>
-								<a href="#" class="slider-btn">Explore Project</a>
-							</div>-->
-						</li>
-					</ul>
+					<div style="padding:20px">
+						<div>Enter Company Name:</div>
+						<div><input type="text" name="company" id="company" /></div>
+					</div>			
 				</div>
 			</div>	
 		</div>	
