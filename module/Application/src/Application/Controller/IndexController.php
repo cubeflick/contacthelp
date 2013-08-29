@@ -211,6 +211,7 @@ class IndexController extends AbstractActionController
 		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 		$em = $this->getEntityManager();
 		
+		
 		if($authService->hasIdentity())
 		{
 			$loggedInUser = $authService->getIdentity();
@@ -259,6 +260,11 @@ class IndexController extends AbstractActionController
     	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
 		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 		$em = $this->getEntityManager();
+		
+		$id = $this->params('id', null);
+// 		echo $id;
+// 		die;
+		
 		if($authService->hasIdentity())
 		{
 			
@@ -267,7 +273,7 @@ class IndexController extends AbstractActionController
 				
 			$messages = $this->flashMessenger()->getMessages();
 				
-			$resultset = $repository->findBy(array('_id'=> 6));
+			$resultset = $repository->findBy(array('_id'=> $id));
 			$record = $resultset[0];
 // 									echo "<pre>";
 // 									print_r($resultset);

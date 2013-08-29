@@ -33,7 +33,7 @@ class Category extends AbstractHelper
     	foreach($resultset as $key => $value){
     		
     		$cname = $value->getName();
-    		$url = "/category/".strtolower($cname);
+    		$url = "/directory/".strtolower($cname);
     		$strCategories .= "<li><a href='$url'>$cname</a></li>";
     	}
     	
