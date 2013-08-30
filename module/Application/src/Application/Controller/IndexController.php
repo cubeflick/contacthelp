@@ -420,7 +420,7 @@ class IndexController extends AbstractActionController
 // 			}
 // 			}
 			
-			$url = "directory/";
+			$url = "/directory/";
 			$url .= $catName;
 			$url .= "/";
 			$url .= $record['_subCategoryTwo'];
