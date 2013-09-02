@@ -5,6 +5,7 @@
 
 <div id="table-content">
 
+
  <table width="100%" cellspacing="0" cellpadding="0" border="0" id="product-table">
 		<tbody>
 		<?php 
@@ -81,10 +82,34 @@
 				<td>Status</td>
 				<td><?php echo $record->getStatus();?></td>
 				</tr>
+				
 				<?php 
 				}
 				
 				?>
+				
 		</tbody>
+		
  </table>
+ <form id="listing_manage" name="category" method="post" action="">
+ <input class="inp-form" type="hidden" value="<?php echo $record->getListingId();?>" required="required" placeholder="Name" name="id">
+ <input class="inp-form" type="hidden" value="<?php echo $record->getStatus();?>" required="required" placeholder="Name" name="status">
+ <input class="approve_listing" type="submit" value="<?php if($record->getStatus() == 0 ){echo 'Approve';}if($record->getStatus() == 1 ){echo 'Reject';}?>" name="submit">
+</form>
+ 
+ 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

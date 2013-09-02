@@ -216,8 +216,7 @@ class IndexController extends AbstractActionController
 		{
 			$loggedInUser = $authService->getIdentity();
 			$this->layout()->loggedInUser = $loggedInUser;
-			
-			$messages = $this->flashMessenger()->getMessages();
+		
 			
 			$query = $em->createQuery('select list,list._id,list._listingName,list._subCategoryOne,list._subCategoryTwo,list._subCategoryThree,
 					list._companyUrl,list._department,list._phoneNumber,list._stepToReach,list._customerServiceLink,
@@ -226,7 +225,7 @@ class IndexController extends AbstractActionController
 			
 // 						print_r($query);
 // 						die;
-			
+			$messages = $this->flashMessenger()->getMessages();
 			$paginator = new ZPaginator(
 					new DoctrinePaginator(new ORMPaginator($query))
 			);
@@ -260,10 +259,38 @@ class IndexController extends AbstractActionController
     	$repository = $this->getEntityManager()->getRepository('Application\Entity\CompanyListing');
 		$authService = $this->getServiceLocator()->get('Zend\Authentication\AuthenticationService');
 		$em = $this->getEntityManager();
-		
+	
+		$listingname = $this->params('listingname', null);
 		$id = $this->params('id', null);
 // 		echo $id;
 // 		die;
+
+		$request = $this->getRequest();
+		if($request->isPost())
+		{
+			$status = $request->getPost('status',null);
+			$id = $request->getPost('id',null);
+			
+			if($status == 1){
+			$query = $em->createQuery("UPDATE Application\Entity\CompanyListing list SET list._status=0 WHERE list._id= '$id'");
+			$query->getResult();
+			$this->flashMessenger()->addMessage('Listing is rejected successfully');
+			return $this->redirect()->toRoute('manage_listing');
+		     }
+		     if($status == 0){
+		     	$query = $em->createQuery("UPDATE Application\Entity\CompanyListing list SET list._status=1 WHERE list._id= '$id'");
+		     	$query->getResult();
+		     	$this->flashMessenger()->addMessage('Listing is approved successfully');
+		     	return $this->redirect()->toRoute('manage_listing');
+		     }
+		     
+		   
+//  		    echo $status;
+// 			echo $id;
+// 			die;
+		}
+		
+		
 		
 		if($authService->hasIdentity())
 		{
@@ -393,7 +420,7 @@ class IndexController extends AbstractActionController
 		{
 			//to find the category of the specific listing
 			$em = $this->getEntityManager();
-		    $subcat =  $record['_subCategoryTwo'];
+		    $subcat =  $record['_subCategoryOne'];
 			$query = $em->createQuery("select cat.parentId, cat.id from Category\Entity\Category cat where cat.cname = '$subcat' ");
 			$cat = $query->getResult();
 // 			if($cat)
@@ -423,7 +450,7 @@ class IndexController extends AbstractActionController
 			$url = "/directory/";
 			$url .= $catName;
 			$url .= "/";
-			$url .= $record['_subCategoryTwo'];
+			$url .= $record['_subCategoryOne'];
 			$url .= "/";
 			$url .=  $record['_listingName'];
 // 			echo $url;
