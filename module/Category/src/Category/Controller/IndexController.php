@@ -332,6 +332,10 @@ class IndexController extends AbstractActionController
     	if($request->isPost())
     	{
     		
+//     		echo '<pre>';
+//     		print_r($request->getPost());
+//     		die;
+    		
     		$form->setData($request->getPost());
     
     		
@@ -359,6 +363,14 @@ class IndexController extends AbstractActionController
     
     public function subcategorydeleteAction()
     {
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+    	$em = $this->getEntityManager();
+    	$id = (int) $this->params('id', null);
+    	$query = $em->createQuery("delete from Category\Entity\Category cat where cat.id = '$id'");
+    	$query->getResult();
+    	$this->flashMessenger()->addMessage('SubCategory deleted successfully','success');
+    	return $this->redirect()->toRoute('managesubcategory');
+    	
     }
         
 }

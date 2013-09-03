@@ -31,6 +31,28 @@ return array(
         			),
         		),
         	),
+        	'news' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/news',
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'news',
+        					),
+        			),
+        	),
+        	
+        	'contact' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Literal',
+        			'options' => array(
+        					'route'    => '/contact',
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'contact',
+        					),
+        			),
+        	),
+        	
         	'addlisting' => array(
         		'type' => 'Zend\Mvc\Router\Http\Literal',
         		'options' => array(

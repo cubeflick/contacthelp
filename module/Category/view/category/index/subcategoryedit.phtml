@@ -1,6 +1,6 @@
 <!--  start page-heading -->
 <div id="page-heading">
-	<h1>Edit Category</h1>
+	<h1>Edit SubCategory</h1>
 </div>
 <!-- end page-heading -->
 <?php echo $this->form()->openTag($form); ?>
@@ -36,7 +36,7 @@
 			<td></td>
 		</tr>
 		<tr>
-		<th valign="top">Parent Id:</th>
+		<th valign="top">Parent Category:</th>
 		<td>
 				<select class="inp-form" name="parent_id">
 				<option value=''>Select...</option>
@@ -48,7 +48,7 @@
 					
 				
 				  					  
-				  	<option><?php echo $cat->getId(); ?></option>
+				  	<option><?php echo $cat->getName(); ?></option>
 				  
 			<?php 	
 				    }		

@@ -236,6 +236,7 @@ header .shell {
 .flexslider {
 	border: 1px solid #645c52;
 	width: 1000px;
+	height: 278px;
 	position: relative;
 	margin: 0 auto;
 	border-radius: 5px;
@@ -782,3 +783,29 @@ ol.rounded-list {
 	border-radius: 2em;
 	transition: all .3s ease-out;
 }
+
+#searchbox
+{
+	background: none repeat scroll 0 0 #87CEEB;
+    border-radius: 10px 10px 10px 10px;
+    height: 66px;
+    width: 420px;
+    padding: 6px 0 0 15px;
+    -moz-box-shadow: -3px 3px 4px #000;
+-webkit-box-shadow: -3px 3px 4px #000;
+box-shadow: -3px 3px 4px #000;
+}
+#searchbox > input
+{
+	height: 30px;
+    width: 200px;
+    border-radius: 5px;
+     font-size: 18px;
+}
+.ui-widget
+{
+font-size: 18px !important;	
+}
+
+
+

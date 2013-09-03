@@ -74,6 +74,19 @@ return array(
 									),
 							),
 					),
+					
+					'subcatdelete' => array(
+							'type' => 'Zend\Mvc\Router\Http\segment',
+							'options' => array(
+									'route'    => '/subcategory/delete/[/:id]',
+									'defaults' => array(
+											'controller' => 'Category\Controller\Index',
+											'action'     => 'subcategorydelete',
+									),
+							),
+					),
+						
+					
 					'editsubcategory' => array(
 							'type' => 'Zend\Mvc\Router\Http\segment',
 							'options' => array(

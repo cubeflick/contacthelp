@@ -51,6 +51,16 @@ class IndexController extends AbstractActionController
     	
     	return new ViewModel();
     }
+    public function newsAction()
+    {
+    	 
+    	return new ViewModel();
+    }
+    public function contactAction()
+    {
+    	 
+    	return new ViewModel();
+    }
     
     public function categoryAction()
     
