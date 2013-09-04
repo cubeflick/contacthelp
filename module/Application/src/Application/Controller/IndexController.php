@@ -433,8 +433,8 @@ class IndexController extends AbstractActionController
 		    $subcat =  $record['_subCategoryOne'];
 			$query = $em->createQuery("select cat.parentId, cat.id from Category\Entity\Category cat where cat.cname = '$subcat' ");
 			$cat = $query->getResult();
-// 			if($cat)
-// 			{
+			if($cat)
+			{
 			$catId = $cat[0]['parentId'];
 // 			    		echo '<pre>';
 // 						print_r($cat[0]);
@@ -444,8 +444,8 @@ class IndexController extends AbstractActionController
 			
 		$query2 = $em->createQuery("select cat.cname, cat.id from Category\Entity\Category cat where cat.id = '$catId' ");
 			$catName = $query2->getResult();
-// 			if($catName)
-// 			{
+			if($catName)
+			{
 			$catName = $catName[0]['cname'];
 // 			echo $catName;
 // 			die;	
@@ -454,18 +454,19 @@ class IndexController extends AbstractActionController
 // 						echo $catName[0]['cname'];
 // 			    		die;
 			
-// 			}
-// 			}
+			
 			
 			$url = "/directory/";
-			$url .= $catName;
+			$url .= str_replace(' ','_',strtolower($catName));
 			$url .= "/";
-			$url .= $record['_subCategoryOne'];
+			$url .= str_replace(' ','_',strtolower($record['_subCategoryOne']));
 			$url .= "/";
-			$url .=  $record['_listingName'];
+			$url .=  str_replace(' ','_',strtolower($record['_listingName']));
 // 			echo $url;
 // 			echo '<br>';
 			$items[$record['_listingName']] = $url;
+			}
+			}
 			
 		}
 		
