@@ -335,6 +335,21 @@ class IndexController extends AbstractActionController
 //     		echo '<pre>';
 //     		print_r($request->getPost());
 //     		die;
+    		$cname = $request->getPost('cname',null);
+    		$pcat = $request->getPost('parent_id',null);
+    		$query = $em->createQuery("select cat.id from Category\Entity\Category cat where cat.cname = '$pcat'");
+    		$pid = $query->getResult();
+    		if($pid)
+    		{
+    		$pid = $pid[0]['id'];
+    		}
+    		$des = $request->getPost('description',null);
+    		$id = $request->getPost('id',null);
+//     		echo $id;
+//     		die;
+
+    		$query = $em->createQuery("update Category\Entity\Category cat set cat.cname='$cname', cat.parentId='$pid', cat.description='$des'  where cat.id = '$id'");
+    		$query->getResult();
     		
     		$form->setData($request->getPost());
     
@@ -357,7 +372,7 @@ class IndexController extends AbstractActionController
     	
     	
     	 
-    	return array('form' => $form, 'category' => $resultset);
+    	return array('form' => $form, 'category' => $resultset, 'id' => $id);
     
     }
     
