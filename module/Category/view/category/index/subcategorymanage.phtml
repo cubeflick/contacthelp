@@ -75,7 +75,7 @@ MSG;
 					<td><?php echo $category['description']; ?></td>
 					<td class="options-width">
 					<a class="icon-1 info-tooltip" href="<?php echo $this->url('editsubcategory',array('action'=>'subcategoryedit','id'=>$category['id'])); ?>"></a>
-					<a class="icon-2 info-tooltip" href="<?php echo $this->url('subcatdelete',array('action'=>'subcategorydelete','id'=>$category['id'])); ?>"></a>
+					<a class="icon-2 info-tooltip" onclick="return confirm('Are you sure you want to delete this SubCategory?');" href="<?php echo $this->url('subcatdelete',array('action'=>'subcategorydelete','id'=>$category['id'])); ?>"></a>
 					<a class="icon-5 info-tooltip" href=""></a>
 					</td>
 				</tr>
@@ -101,3 +101,15 @@ MSG;
 	</tr>
 	</tbody></table>
 	<div class="clear">&nbsp;</div>
+	
+	<script type="text/javascript">
+    function confirm() {
+
+        if(r == true) {
+            window.location='delete_tour.php;
+        } else {
+            window.location='tour_manage.php';
+        }
+    }
+    </script>
+	
