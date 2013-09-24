@@ -807,5 +807,27 @@ box-shadow: -3px 3px 4px #000;
 font-size: 18px !important;	
 }
 
+.user_comment 
+{
+background: none repeat scroll 0 0 #87CEEB;
+    border: 1px solid #D6E4F2;
+    margin-top: 25px;
+    padding: 5px 5px 0;
+    height: 35px;
+}
+
+.headline
+{
+background:none repeat scroll 0 0 #EEEEEE;
+    color: #3C2323;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 15px 15px 0 0;
+    text-align: center;	
+}
+
+
+
+
 
 

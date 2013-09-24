@@ -8,6 +8,7 @@ use Zend\Filter\Null;
 
 use Application\Entity\CompanyListing;
 use Application\Form\listing;
+use Application\Form\rating;
 use Zend\Mvc\Controller\AbstractActionController,
 Zend\View\Model\ViewModel,
 Category\Form\CategoryFormValidator,
@@ -407,6 +408,49 @@ class IndexController extends AbstractActionController
 //     	));
     	
     }
+    
+    public function ratingAction()
+    
+    {
+    	
+    	$request = $this->getRequest();
+    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
+    	$em = $this->getEntityManager();
+    	 
+    	$form = new Rating();
+    	 
+    	 
+    	$listing = new CompanyListing();
+    	$listing->populate($request->getPost());
+    	
+    	$resultset = $repository->findBy(array('parentId'=>null));
+    	
+    	 
+    	$arrayFinal = array();
+    	foreach ($resultset as $key => $category)
+    	{
+    		$subCatArray = $repository->findBy(array('parentId'=>$category->getId()));
+    		$arrayFinal[$category->getName()] = $subCatArray;
+    	}
+    	 
+    
+    	if($request->isPost())
+    	{
+    		//     		$formValidator = new CategoryFormValidator();
+    		//     		$form->setInputFilter($formValidator->getInputFilter());
+    		$form->setData($request->getPost());
+    	
+    		$em->persist($listing);
+    		$em->flush();
+    		$this->flashMessenger()->addMessage('Listing added successfully','success');
+    		echo "Data Saved";
+    	
+    	}
+    	return array('form' => $form, 'category' => $arrayFinal);
+    	  
+    }
+    
+    
     
     public function searchlistingAction(){
 
