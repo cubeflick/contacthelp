@@ -1,0 +1,179 @@
+<!--  start page-heading -->
+<div id="page-heading">
+	<h1>Add your Dell customer service review</h1>
+	<br>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor quis tellus euismod sodales. Donec tincidunt auctor convallis. Nunc tincidunt nibh nec odio venenatis et condimentum nisl dapibus. Integer ipsum elit, commodo ac congue quis, varius at eros. Praesent tempus vulputate tortor eu feugiat. Maecenas bibendum suscipit molestie. Phasellus erat arcu, fringilla ac suscipit nec, lobortis at mi.</p>
+
+	</div>
+<!-- end page-heading -->
+<fieldset id="listing_form">
+<legend>Submit Listing</legend>
+<?php echo $this->form()->openTag($form); ?>
+<table width="100%" cellspacing="0" cellpadding="0" border="0" id="content-table">
+<tbody><tr>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowleft.jpg"></th>
+	<th class="topleft"></th>
+	<td id="tbl-border-top">&nbsp;</td>
+	<th class="topright"></th>
+	<th class="sized" rowspan="3"><img width="20" height="300" alt="" src="../images/shared/side_shadowright.jpg"></th>
+</tr>
+<tr>
+	<td id="tbl-border-left"></td>
+	<td>
+	<!--  start content-table-inner -->
+	<div id="content-table-inner">
+<div id="table-content">	
+	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+	<tbody><tr valign="top">
+	<td>
+		<!-- start id-form -->
+		<table cellspacing="0" cellpadding="0" border="0" id="id-form">
+		<tbody>
+		<div class="fieldsetBodyText">
+                Please complete the fields below. The only required fields are indicated. Comments are added immediately.
+                </div>
+		
+		<tr>
+			<th valign="top">Listing/Company Name:</th>
+			<td>
+				<?php 
+					echo $this->formInput($form->get('listing_name'));
+					echo $this->formElementErrors($form->get('listing_name'));
+				?>
+			</td>
+			<td></td>
+		</tr>
+	<tr>
+		<th valign="top">Comments:</th>
+		<td>
+				<?php echo $this->formTextarea($form->get('comments')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+	<td colspan="2">
+                            <hr><h2 style="text-align:center;">Ratings</h2>
+                            Please rate your experience with Dell for the categories below. Do not make a selection
+                            for any categories that do not apply.
+                        </td>
+                        </tr>
+	<tr>
+		<th valign="top">Reachability:</th>
+		<td>
+		<select class="inp-form" name="reachability">
+		<option value=''>Select...</option>
+			<option></option>
+			</select>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Return Process:</th>
+		<td>
+		<select class="inp-form" name="return_process">
+		<option value=''>Select...</option>
+			<option></option>
+			</select>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Issue Resolution:</th>
+		<td>
+		<select class="inp-form" name="issue_resolution">
+		<option value=''>Select...</option>
+			<option></option>
+			</select>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Friendliness:</th>
+		<td>
+		<select class="inp-form" name="friendliness">
+		<option value=''>Select...</option>
+			<option></option>
+			</select>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Service Knowledge:</th>
+		<td>
+		<select class="inp-form" name="service_knowledge">
+		<option value=''>Select...</option>
+			<option></option>
+			</select>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+	<tr>
+		<th valign="top">Screen Name:</th>
+		<td>
+				<?php echo $this->formInput($form->get('screen_name')); ?>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th valign="top">Your Name:</th>
+		<td>
+				<?php echo $this->formInput($form->get('user_name')); ?>
+		</td>
+		<td></td>
+	</tr>
+	<tr>
+		<th valign="top">Your Email:</th>
+		<td>
+				<?php echo $this->formInput($form->get('user_email')); ?>
+		</td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<th valign="top"></th>
+		<td><div id="captcha">
+				<?php echo $this->formCaptcha($form->get('captcha')); ?>
+		</div>
+		</td>
+		<td></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th>&nbsp;</th>
+		<td valign="top">
+		
+			<?php echo $this->formInput($form->get('submit')); ?>
+		</td>
+		<td></td>
+	</tr>
+	</tbody></table>
+	<!-- end id-form  -->
+
+	</td>
+</tr>
+</tbody></table>
+</div> 
+<div class="clear"></div>
+ 
+
+</div>
+<!--  end content-table-inner  -->
+</td>
+<td id="tbl-border-right"></td>
+</tr>
+<tr>
+	<th class="sized bottomleft"></th>
+	<td id="tbl-border-bottom">&nbsp;</td>
+	<th class="sized bottomright"></th>
+</tr>
+</tbody></table>
+</fieldset>
+
+<?php echo $this->form()->closeTag($form); ?>
