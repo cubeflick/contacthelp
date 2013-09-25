@@ -1,6 +1,6 @@
 <!--  start page-heading -->
 <div id="page-heading">
-	<h1>Add your Dell customer service review</h1>
+	<h1>Add your <?php  echo $listing; ?> customer service review</h1>
 	<br>
 	
 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non tortor quis tellus euismod sodales. Donec tincidunt auctor convallis. Nunc tincidunt nibh nec odio venenatis et condimentum nisl dapibus. Integer ipsum elit, commodo ac congue quis, varius at eros. Praesent tempus vulputate tortor eu feugiat. Maecenas bibendum suscipit molestie. Phasellus erat arcu, fringilla ac suscipit nec, lobortis at mi.</p>
@@ -37,9 +37,12 @@
 		<tr>
 			<th valign="top">Listing/Company Name:</th>
 			<td>
+			
+			<input class="inp-form" type="text" name="listing_name" value="<?php  echo $listing; ?>" />
 				<?php 
-					echo $this->formInput($form->get('listing_name'));
-					echo $this->formElementErrors($form->get('listing_name'));
+// 					echo $this->formInput($form->get('listing_name'));
+// 					echo $this->formElementErrors($form->get('listing_name'));
+					
 				?>
 			</td>
 			<td></td>

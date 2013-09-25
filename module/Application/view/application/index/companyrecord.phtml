@@ -73,7 +73,22 @@
                 
  </div>
  <div>
- <b><a href="#">Click here</a> to add a comment for this listing.</b>
+ <b><a href="<?php echo $this->url('addrating', array('action' => 'rating')); ?>/<?php echo $result[0]->getListingName();?>">Click here</a> to add a comment for this listing.</b>
+ 
+ <?php 
+				foreach ($comment as $key1=>$value1)
+				{
+				
+				?>
+          <div class="listingUserComments">
+           
+                 <p>  <?php echo $value1->getComments();?>
+                  </br>  <span style="color: #FE8600;"><?php echo $value1->getScreenname();?></span> Posted Date                    
+
+                </p></div>
+                <?php 
+				}
+				?>
  </div>
 
 

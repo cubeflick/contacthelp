@@ -63,6 +63,21 @@ return array(
         			),
         		),
         	),
+        	
+        	'addrating' => array(
+        			'type' => 'Zend\Mvc\Router\Http\Segment',
+        			'options' => array(
+        					'route'    => '/comments[/:listing]',
+        					'defaults' => array(
+        							'controller' => 'Application\Controller\Index',
+        							'action'     => 'rating',
+        					),
+        			),
+        	),
+        	
+        	
+        	
+        	
 //         	'frontcategorylisting' => array(
 //         			'type' => 'Zend\Mvc\Router\Http\Segment',
 //         			'options' => array(

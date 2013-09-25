@@ -7,6 +7,7 @@ use Zend\Validator\NotEmpty;
 use Zend\Filter\Null;
 
 use Application\Entity\CompanyListing;
+use Application\Entity\UserRating;
 use Application\Form\listing;
 use Application\Form\rating;
 use Zend\Mvc\Controller\AbstractActionController,
@@ -202,13 +203,20 @@ class IndexController extends AbstractActionController
     	$listing->populate($request->getPost());
     	
     	$resultset = $repository->findBy(array('_listingName'=>$listingname));
+    	
+    	//fetch record for comments
+    	$repositoryComment = $this->getEntityManager()->getRepository('Application\Entity\UserRating');
+    	$emComment = $this->getEntityManager();
+    	$resultsetComment = $repositoryComment->findBy(array('_listingName'=>$listingname));
+    	
 //     	    	 echo '<pre>';
-//     	    	 print_r($resultset);
+//     	    	 print_r($resultsetComment);
 //  				 die;
     	
     	return new ViewModel(array(
     			
-    			'result' => $resultset
+    			'result' => $resultset,
+    			'comment' => $resultsetComment
     	));
     }
     
@@ -390,7 +398,7 @@ class IndexController extends AbstractActionController
     				$em->persist($listing);
     				$em->flush();
     				$this->flashMessenger()->addMessage('Listing added successfully','success');
-    				echo "Data Saved";
+//     				echo "Data Saved";
     				
 //    				return $this->redirect()->toRoute('managecategory');
 //     			}
@@ -412,27 +420,16 @@ class IndexController extends AbstractActionController
     public function ratingAction()
     
     {
-    	
+    	$listing = $this->params('listing', null);
     	$request = $this->getRequest();
-    	$repository = $this->getEntityManager()->getRepository('Category\Entity\Category');
     	$em = $this->getEntityManager();
     	 
     	$form = new Rating();
     	 
     	 
-    	$listing = new CompanyListing();
-    	$listing->populate($request->getPost());
+    	$rating = new UserRating();
+    	$rating->populate($request->getPost());
     	
-    	$resultset = $repository->findBy(array('parentId'=>null));
-    	
-    	 
-    	$arrayFinal = array();
-    	foreach ($resultset as $key => $category)
-    	{
-    		$subCatArray = $repository->findBy(array('parentId'=>$category->getId()));
-    		$arrayFinal[$category->getName()] = $subCatArray;
-    	}
-    	 
     
     	if($request->isPost())
     	{
@@ -440,13 +437,13 @@ class IndexController extends AbstractActionController
     		//     		$form->setInputFilter($formValidator->getInputFilter());
     		$form->setData($request->getPost());
     	
-    		$em->persist($listing);
+    		$em->persist($rating);
     		$em->flush();
-    		$this->flashMessenger()->addMessage('Listing added successfully','success');
-    		echo "Data Saved";
+    		$this->flashMessenger()->addMessage('Your comments added successfully','success');
+//     		echo "Data Saved";
     	
     	}
-    	return array('form' => $form, 'category' => $arrayFinal);
+    	return array('form' => $form, 'listing'=>$listing);
     	  
     }
     
